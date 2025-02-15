@@ -16,6 +16,10 @@ const ChooseFeel = () => {
     navigate("/home");
   };
 
+  const GoAnswer = () => {
+    navigate("/show-answer");
+  };
+
   const Feel = [
     { id: 1, feel: "행복해요", icon: Happy },
     { id: 2, feel: "평온해요", icon: Free },
@@ -27,7 +31,7 @@ const ChooseFeel = () => {
     <S.Layout>
       <S.Header>
         <img src={Arrow} alt="뒤로 가기" onClick={GoBack} />
-        <S.CheckIcon src={Check} alt="확인" />
+        <S.CheckIcon src={Check} alt="확인" onClick={GoAnswer} />
       </S.Header>
       <S.Center>
         <S.ChooseFeelContainer>
