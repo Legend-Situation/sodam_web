@@ -42,6 +42,7 @@ export const LoginContainer = styled.div`
   border-radius: 5px;
   position: absolute;
   bottom: 30px;
+  cursor: pointer;
 `;
 
 export const CLogo = styled.img`
