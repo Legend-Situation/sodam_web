@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import Variant from "../../assets/Variant.svg";
@@ -15,10 +14,14 @@ const StartConnect = () => {
     navigate("/share-code");
   };
 
+  const handleNavigateToNamed = () => {
+    navigate("/named");
+  };
+
   return (
     <S.Layout>
       <S.Header>
-        <img src={Variant} />
+        <img src={Variant} onClick={handleNavigateToNamed} />
       </S.Header>
       <S.TitleContainer>
         <span>소중한 사람들과</span>

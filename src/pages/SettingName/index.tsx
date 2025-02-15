@@ -1,11 +1,19 @@
 import { SetStateAction, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 
 const SettingName = () => {
   const [inputName, setInputName] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e: { target: { value: SetStateAction<string>; }; }) => {
     setInputName(e.target.value);
+  };
+
+  const handleConfirm = () => {
+    if (inputName.length > 0) {
+      navigate("/start-content");
+    }
   };
 
   return (
@@ -21,7 +29,9 @@ const SettingName = () => {
           onChange={handleChange}
         />
       </S.MainContainer>
-      <S.CheckBtn isActive={inputName.length > 0}>확인</S.CheckBtn>
+      <S.CheckBtn isActive={inputName.length > 0} onClick={handleConfirm}>
+        확인
+      </S.CheckBtn>
     </S.Layout>
   );
 };
