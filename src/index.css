@@ -14,8 +14,8 @@
 }
 
 @font-face {
-  font-family: 'Nanum DdoBagDdoBag';
-  src: url('./src/font/NanumDdoBagDdoBag.ttf') format('truetype');
+  font-family: 'SeoulHangangM';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulHangangM.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,12 +27,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'White Angelica';
-  src: url('https://fonts.cdnfonts.com/some-path-to-white-angelica.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
 
 a {
   font-weight: 500;
