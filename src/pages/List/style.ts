@@ -9,6 +9,7 @@ export const Layout = styled.main`
   flex-direction: column;
   align-items: center;
   font-family: "SeoulHangangM";
+  position: relative;
 `;
 export const Header = styled.header`
   padding: 57px 28px 30px 28px;
@@ -38,4 +39,13 @@ export const Date = styled.div`
 export const Question = styled.div`
   font-size: 14px;
   color: #5c5c5c;
+`;
+export const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding-top: 20px;
+  position: absolute;
+  bottom: 40px;
 `;

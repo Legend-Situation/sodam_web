@@ -15,6 +15,15 @@ const Home = () => {
   const handleGoAnswer = () => {
     navigate("/choose-feel");
   };
+  const GoList = () => {
+    navigate("/list");
+  };
+  const GoCal = () => {
+    navigate("/calendar");
+  };
+  const GoMyPage = () => {
+    navigate("/my-page");
+  };
   return (
     <S.Layout>
       <S.Header>
@@ -50,9 +59,13 @@ const Home = () => {
       </S.MainContainer>
       <S.Footer>
         <img src={HomeIcon} style={{ cursor: "pointer" }} />
-        <img src={CalendarIcon} style={{ cursor: "pointer" }} />
-        <img src={Note} style={{ cursor: "pointer" }} />
-        <img src={MyPageIcon} style={{ cursor: "pointer" }} />
+        <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
+        <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
+        <img
+          src={MyPageIcon}
+          onClick={GoMyPage}
+          style={{ cursor: "pointer" }}
+        />
       </S.Footer>
     </S.Layout>
   );
