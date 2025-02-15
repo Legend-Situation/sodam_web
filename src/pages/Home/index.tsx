@@ -21,8 +21,8 @@ const Home = () => {
   const GoCal = () => {
     navigate("/calendar");
   };
-  const GoMyPage = () => {
-    navigate("/my-page");
+  const GoHome = () => {
+    navigate("/home");
   };
   return (
     <S.Layout>
@@ -43,7 +43,7 @@ const Home = () => {
           <>일째</>
         </S.MeetTextCotainer>
         <S.MyGroupNames>
-          <S.Name>띵용닝</S.Name>
+          <S.Name>띠연</S.Name>
           <S.HeartIcon src={Heart} />
           <S.Name>김사장</S.Name>
           <S.HeartIcon src={Heart} />
@@ -61,11 +61,7 @@ const Home = () => {
         <img src={HomeIcon} style={{ cursor: "pointer" }} />
         <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
         <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
-        <img
-          src={MyPageIcon}
-          onClick={GoMyPage}
-          style={{ cursor: "pointer" }}
-        />
+        <img src={MyPageIcon} onClick={GoHome} style={{ cursor: "pointer" }} />
       </S.Footer>
     </S.Layout>
   );

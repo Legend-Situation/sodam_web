@@ -10,6 +10,7 @@ import ChooseFeel from "./pages/ChooseFeel";
 import Chat from "./pages/Chat";
 import List from "./pages/List";
 import ShowAnswer from "./pages/ShowAnswer";
+import MyPage from "./pages/MyPage";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/chat" element={<Chat />} />
         <Route path="/list" element={<List />} />
         <Route path="/show-answer" element={<ShowAnswer />} />
+        <Route path="/my-page" element={<MyPage />} />
       </Routes>
     </Router>
   );
