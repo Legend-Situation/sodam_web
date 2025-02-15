@@ -1,8 +1,20 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import Variant from "../../assets/Variant.svg";
 import SeaOtter5 from "../../assets/seaOtter5.png";
 
 const StartConnect = () => {
+  const navigate = useNavigate();
+
+  const handleCreateGroup = () => {
+    navigate("/create-group");
+  };
+
+  const handleJoinGroup = () => {
+    navigate("/share-code");
+  };
+
   return (
     <S.Layout>
       <S.Header>
@@ -16,13 +28,13 @@ const StartConnect = () => {
         <S.ChrImg src={SeaOtter5} />
       </S.ImgContainer>
       <S.SendConnectContainer>
-        <S.SendBtn>그룹 생성하기</S.SendBtn>
+        <S.SendBtn onClick={handleCreateGroup}>그룹 생성하기</S.SendBtn>
         <S.OrContainer>
           <S.Line />
           <S.Or>또는</S.Or>
           <S.Line />
         </S.OrContainer>
-        <S.ConnectBtn>참가하기</S.ConnectBtn>
+        <S.ConnectBtn onClick={handleJoinGroup}>참가하기</S.ConnectBtn>
       </S.SendConnectContainer>
     </S.Layout>
   );
