@@ -7,6 +7,7 @@ import CalendarIcon from "../../assets/calendar.svg";
 import MyPageIcon from "../../assets/mypage.svg";
 import SeaOtter1 from "../../assets/seaOtter1.png";
 import Heart from "../../assets/heart.svg";
+import Note from "../../assets/note.svg";
 
 const Home = () => {
   return (
@@ -43,6 +44,7 @@ const Home = () => {
       <S.Footer>
         <img src={HomeIcon} style={{ cursor: "pointer" }} />
         <img src={CalendarIcon} style={{ cursor: "pointer" }} />
+        <img src={Note} style={{ cursor: "pointer" }} />
         <img src={MyPageIcon} style={{ cursor: "pointer" }} />
       </S.Footer>
     </S.Layout>

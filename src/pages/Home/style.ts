@@ -88,6 +88,6 @@ export const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 90px;
+  gap: 50px;
   padding-top: 20px;
 `;
