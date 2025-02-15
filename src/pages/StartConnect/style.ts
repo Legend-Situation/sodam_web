@@ -11,7 +11,7 @@ export const Layout = styled.main`
 `;
 
 export const Header = styled.header`
-  padding: 62px 28px 0 10px;
+  padding: 62px 0 10px 0;
 `;
 
 export const TitleContainer = styled.div`
