@@ -13,7 +13,7 @@ const ShareCode = () => {
 
       setTimeout(() => {
         setCopied(false);
-      }, 1000); // 0.5초 후 메시지 숨김
+      }, 1000); // 1초 후 메시지 숨김
     } catch (error) {
       console.error("복사 실패:", error);
     }
@@ -31,11 +31,14 @@ const ShareCode = () => {
       <S.CopyContainer>
         <S.CopyTitle>나의 코드 복사</S.CopyTitle>
         <S.CodeContainer>
-          <S.Code>ABCDCDE</S.Code>
+          <S.Code>{code}</S.Code>
           <img src={CopyIcon} onClick={handleCopy} style={{ cursor: "pointer" }} />
         </S.CodeContainer>
       </S.CopyContainer>
+
+      {/* 복사 메시지를 CopyContainer 아래로 위치 */}
       {copied && <S.CopiedMessage>코드가 복사되었습니다.</S.CopiedMessage>}
+
       <S.CheckBtn>확인</S.CheckBtn>
     </S.Layout>
   );

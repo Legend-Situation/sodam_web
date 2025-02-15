@@ -63,12 +63,14 @@ export const CheckBtn = styled.button`
   position: absolute;
 `;
 export const CopiedMessage = styled.div`
-  position: absolute;
-  bottom: 120px;
-  background-color: rgba(132, 195, 238, 0.9);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  width: 85%;
+  padding: 12px 0;
   font-size: 16px;
-  transition: opacity 0.3s ease-in-out;
+  background-color: #84c3ee;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+  text-align: center;
+  position: relative; 
+  margin-top: 40px;
 `;
