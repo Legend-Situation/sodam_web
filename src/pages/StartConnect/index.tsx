@@ -11,7 +11,7 @@ const StartConnect = () => {
   };
 
   const handleJoinGroup = () => {
-    navigate("/share-code");
+    navigate("/register-group");
   };
 
   const handleNavigateToNamed = () => {
