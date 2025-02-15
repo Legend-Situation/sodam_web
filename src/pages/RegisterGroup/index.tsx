@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import * as S from "./style";
 
-const CreateGroup = () => {
+const RegisterGroup = () => {
   const [inputGroup, setInputGroup] = useState("");
-  const [inputDate, setInputDate] = useState("");
 
   const handleInputGroup = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
     setInputGroup(e.target.value);
-  };
-  const handleInputDate = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setInputDate(e.target.value);
   };
   return (
     <S.Layout>
@@ -27,16 +21,12 @@ const CreateGroup = () => {
           value={inputGroup}
           onChange={handleInputGroup}
         />
-        <span>관계 시작 날짜</span>
       </S.MainContainer>
       <S.BtnContainer>
-        <S.CheckBtn isActive={inputGroup.length > 0 && inputDate.length > 0}>
-          확인
-        </S.CheckBtn>
+        <S.CheckBtn isActive={inputGroup.length > 0}>확인</S.CheckBtn>
       </S.BtnContainer>
-
     </S.Layout>
   );
 };
 
-export default CreateGroup;
+export default RegisterGroup;
