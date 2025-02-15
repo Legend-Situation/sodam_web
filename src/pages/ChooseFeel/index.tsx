@@ -6,9 +6,15 @@ import Sad from "../../assets/sad.png";
 import Angry from "../../assets/angry.png";
 import Arrow from "../../assets/arrow.svg";
 import Check from "../../assets/check.svg";
+import { useNavigate } from "react-router-dom";
 
 const ChooseFeel = () => {
+  const navigate = useNavigate();
   const [selectedFeelId, setSelectedFeelId] = useState<number | null>(null);
+
+  const GoBack = () => {
+    navigate("/home");
+  };
 
   const Feel = [
     { id: 1, feel: "행복해요", icon: Happy },
@@ -20,7 +26,7 @@ const ChooseFeel = () => {
   return (
     <S.Layout>
       <S.Header>
-        <img src={Arrow} alt="뒤로 가기" />
+        <img src={Arrow} alt="뒤로 가기" onClick={GoBack} />
         <S.CheckIcon src={Check} alt="확인" />
       </S.Header>
       <S.Center>
@@ -40,7 +46,7 @@ const ChooseFeel = () => {
           </S.Feel>
         </S.ChooseFeelContainer>
         <S.QuestionContainer>
-          <S.QuestionNumber>질문 #12</S.QuestionNumber>
+          <S.QuestionNumber>질문 #1</S.QuestionNumber>
           <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
           <S.Answer placeholder="답변을 입력하세요." />
         </S.QuestionContainer>

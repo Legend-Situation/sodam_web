@@ -8,8 +8,13 @@ import MyPageIcon from "../../assets/mypage.svg";
 import SeaOtter1 from "../../assets/seaOtter1.png";
 import Heart from "../../assets/heart.svg";
 import Note from "../../assets/note.svg";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleGoAnswer = () => {
+    navigate("/choose-feel");
+  };
   return (
     <S.Layout>
       <S.Header>
@@ -36,7 +41,7 @@ const Home = () => {
           <S.Name>닉네임</S.Name>
         </S.MyGroupNames>
         <S.CharacterImg src={SeaOtter1} />
-        <S.QuestionContainer>
+        <S.QuestionContainer onClick={handleGoAnswer}>
           <S.QuestionTitle>오늘의 질문 #1</S.QuestionTitle>
           <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
         </S.QuestionContainer>

@@ -6,6 +6,8 @@ import CreateGroup from "./pages/CreateGroup";
 import StartConnect from "./pages/StartConnect";
 import Home from "./pages/Home";
 import RegisterGrop from "./pages/RegisterGroup";
+import ChooseFeel from "./pages/ChooseFeel";
+import Chat from "./pages/Chat";
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path="/start-content" element={<StartConnect />} />
         <Route path="/home" element={<Home />} />
         <Route path="/register-group" element={<RegisterGrop />} />
+        <Route path="/choose-feel" element={<ChooseFeel />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
     </Router>
   );
