@@ -1,7 +1,24 @@
+import { useState } from "react";
 import * as S from "./style";
 import CopyIcon from "../../assets/copyIcon.svg";
 
 const ShareCode = () => {
+  const [copied, setCopied] = useState(false);
+  const code = "ABCDCDE";
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(code); // 클립보드에 복사
+      setCopied(true);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 1000); // 0.5초 후 메시지 숨김
+    } catch (error) {
+      console.error("복사 실패:", error);
+    }
+  };
+
   return (
     <S.Layout>
       <S.Header>
@@ -15,9 +32,10 @@ const ShareCode = () => {
         <S.CopyTitle>나의 코드 복사</S.CopyTitle>
         <S.CodeContainer>
           <S.Code>ABCDCDE</S.Code>
-          <img src={CopyIcon} />
+          <img src={CopyIcon} onClick={handleCopy} style={{ cursor: "pointer" }} />
         </S.CodeContainer>
       </S.CopyContainer>
+      {copied && <S.CopiedMessage>코드가 복사되었습니다.</S.CopiedMessage>}
       <S.CheckBtn>확인</S.CheckBtn>
     </S.Layout>
   );

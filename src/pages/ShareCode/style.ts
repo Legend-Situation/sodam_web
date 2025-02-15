@@ -62,3 +62,13 @@ export const CheckBtn = styled.button`
   cursor: pointer;
   position: absolute;
 `;
+export const CopiedMessage = styled.div`
+  position: absolute;
+  bottom: 120px;
+  background-color: rgba(132, 195, 238, 0.9);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: opacity 0.3s ease-in-out;
+`;
