@@ -30,15 +30,17 @@ const Home = () => {
       <S.MainContainer>
         <S.MeetTextCotainer>
           <>만난지</>
-          <S.BlueText>303</S.BlueText>
+          <S.BlueText>7315</S.BlueText>
           <>일째</>
         </S.MeetTextCotainer>
         <S.MyGroupNames>
           <S.Name>띵용닝</S.Name>
           <S.HeartIcon src={Heart} />
-          <S.Name>닉네임</S.Name>
+          <S.Name>김사장</S.Name>
           <S.HeartIcon src={Heart} />
-          <S.Name>닉네임</S.Name>
+          <S.Name>엄마다</S.Name>
+          <S.HeartIcon src={Heart} />
+          <S.Name>ㅅㅇ</S.Name>
         </S.MyGroupNames>
         <S.CharacterImg src={SeaOtter1} />
         <S.QuestionContainer onClick={handleGoAnswer}>
