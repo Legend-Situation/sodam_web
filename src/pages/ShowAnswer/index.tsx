@@ -31,7 +31,7 @@ const ShowAnswer = () => {
       <S.MainContainer>
         <S.QuestionNumberContainer>
           <span>질문 #1</span>
-          <span>2025.01.01</span>
+          <span>2025.02.16</span>
         </S.QuestionNumberContainer>
         <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
         <S.MemberFeelContainer>
@@ -55,14 +55,14 @@ const ShowAnswer = () => {
         <S.Answer1>
           <S.Detial>
             <span>김사장</span>
-            <span style={{ color: "#8A8A8A" }}>2월 16일 (일) 3:48</span>
+            <span style={{ color: "#8A8A8A" }}>2월 16일 (일)</span>
           </S.Detial>
           <S.AnswerText1>여보는 사자... 우는 개. 연이는 똥깨.</S.AnswerText1>
         </S.Answer1>
         <S.Answer2>
           <S.Detial>
             <span>엄마다</span>
-            <span style={{ color: "#8A8A8A" }}>2월 16일 (일) 8:20</span>
+            <span style={{ color: "#8A8A8A" }}>2월 16일 (일)</span>
           </S.Detial>
           <S.AnswerText1>여보는 개구리, 우는 개, 연이는 돼지?</S.AnswerText1>
         </S.Answer2>
@@ -77,7 +77,7 @@ const ShowAnswer = () => {
         <S.Answer2>
           <S.Detial>
             <span>띠연</span>
-            <span style={{ color: "#8A8A8A" }}>2월 16일 (일) 10:46</span>
+            <span style={{ color: "#8A8A8A" }}>2월 16일 (일)</span>
           </S.Detial>
           <S.AnswerText1>아빠는 토키, 엄마는 양, 오빠는 타조</S.AnswerText1>
         </S.Answer2>
