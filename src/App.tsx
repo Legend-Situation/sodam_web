@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import SettingName from "./pages/SettingName";
 import ShareCode from "./pages/ShareCode";
@@ -11,12 +11,17 @@ import Chat from "./pages/Chat";
 import List from "./pages/List";
 import ShowAnswer from "./pages/ShowAnswer";
 import MyPage from "./pages/MyPage";
+import KakaoRedirectHandler from "./pages/KakaoRedirectHandler";
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route
+          path="/login/oauth2/code/kakao"
+          element={<KakaoRedirectHandler />}
+        />
         <Route path="/named" element={<SettingName />} />
         <Route path="/share-code" element={<ShareCode />} />
         <Route path="/create-group" element={<CreateGroup />} />
@@ -29,7 +34,7 @@ const App = () => {
         <Route path="/show-answer" element={<ShowAnswer />} />
         <Route path="/my-page" element={<MyPage />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 
