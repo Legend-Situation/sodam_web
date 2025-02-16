@@ -12,6 +12,7 @@ import List from "./pages/List";
 import ShowAnswer from "./pages/ShowAnswer";
 import MyPage from "./pages/MyPage";
 import KakaoRedirectHandler from "./pages/KakaoRedirectHandler";
+import Calendar from "./pages/Calendar";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/list" element={<List />} />
         <Route path="/show-answer" element={<ShowAnswer />} />
         <Route path="/my-page" element={<MyPage />} />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </BrowserRouter>
   );

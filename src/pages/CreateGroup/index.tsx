@@ -1,20 +1,30 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 
 const CreateGroup = () => {
   const [inputGroup, setInputGroup] = useState("");
   const [inputDate, setInputDate] = useState("");
+  const navigate = useNavigate();
 
   const handleInputGroup = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
     setInputGroup(e.target.value);
   };
+
   const handleInputDate = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
     setInputDate(e.target.value);
   };
+
+  const handleConfirm = () => {
+    if (inputGroup.length > 0 && inputDate.length > 0) {
+      navigate("/share-code");
+    }
+  };
+
   return (
     <S.Layout>
       <S.Header>
@@ -35,11 +45,10 @@ const CreateGroup = () => {
         />
       </S.MainContainer>
       <S.BtnContainer>
-        <S.CheckBtn isActive={inputGroup.length > 0 && inputDate.length > 0}>
-        확인
-      </S.CheckBtn>
+        <S.CheckBtn isActive={inputGroup.length > 0 && inputDate.length > 0} onClick={handleConfirm}>
+          확인
+        </S.CheckBtn>
       </S.BtnContainer>
-      
     </S.Layout>
   );
 };

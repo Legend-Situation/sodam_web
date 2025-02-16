@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import CopyIcon from "../../assets/copyIcon.svg";
 
 const ShareCode = () => {
   const [copied, setCopied] = useState(false);
+  const navigate = useNavigate();
   const code = "ABCDCDE";
 
   const handleCopy = async () => {
@@ -17,6 +19,10 @@ const ShareCode = () => {
     } catch (error) {
       console.error("복사 실패:", error);
     }
+  };
+
+  const handleConfirm = () => {
+    navigate("/home");
   };
 
   return (
@@ -39,7 +45,7 @@ const ShareCode = () => {
       {/* 복사 메시지를 CopyContainer 아래로 위치 */}
       {copied && <S.CopiedMessage>코드가 복사되었습니다.</S.CopiedMessage>}
 
-      <S.CheckBtn>확인</S.CheckBtn>
+      <S.CheckBtn onClick={handleConfirm}>확인</S.CheckBtn>
     </S.Layout>
   );
 };
