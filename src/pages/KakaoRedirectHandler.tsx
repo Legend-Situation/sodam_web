@@ -22,7 +22,7 @@ const KakaoRedirectHandler = () => {
           );
 
           console.log("로그인 성공:", response.data);
-          navigate("/home"); // 로그인 성공 후 메인 페이지로 이동
+          navigate("/named"); // 로그인 성공 후 메인 페이지로 이동
         } catch (error) {
           console.error("로그인 실패:", error);
           alert("로그인에 실패했습니다.");

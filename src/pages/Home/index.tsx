@@ -21,8 +21,8 @@ const Home = () => {
   const GoCal = () => {
     navigate("/calendar");
   };
-  const GoHome = () => {
-    navigate("/home");
+  const GoMyPage = () => {
+    navigate("/my-page");
   };
   return (
     <S.Layout>
@@ -61,7 +61,11 @@ const Home = () => {
         <img src={HomeIcon} style={{ cursor: "pointer" }} />
         <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
         <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
-        <img src={MyPageIcon} onClick={GoHome} style={{ cursor: "pointer" }} />
+        <img
+          src={MyPageIcon}
+          onClick={GoMyPage}
+          style={{ cursor: "pointer" }}
+        />
       </S.Footer>
     </S.Layout>
   );
