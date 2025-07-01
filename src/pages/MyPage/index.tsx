@@ -1,16 +1,47 @@
+import { useEffect, useState } from "react";
+import { useQuery } from '@tanstack/react-query';
 import * as S from "./style";
-import ShellIcon from "../../assets/shell.svg";
-import Heart from "../../assets/heart.svg";
-import CopyIcon from "../../assets/copyIcon.svg";
-import Right from "../../assets/right.svg";
+import ShellIcon from "@/icons/ShellIcon";
+import HeartIcon from "@/icons/HeartIcon";
+import CopyIcon from "@/icons/CopyIcon";
+import RightIcon from "@/icons/RightIcon";
 import { useNavigate } from "react-router-dom";
-import Note from "../../assets/note.svg";
-import CalendarIcon from "../../assets/calendar.svg";
-import GrayHome from "../../assets/grayhome.svg";
-import DarkProfile from "../../assets/dartprofile.svg";
+import NoteIcon from "@/icons/NoteIcon";
+import CalendarIcon from "@/icons/CalendarIcon";
+import GrayhomeIcon from "@/icons/GrayhomeIcon";
+import DartprofileIcon from "@/icons/DartprofileIcon";
+import { getMyGroup } from "@/api";
+
+interface Member {
+  userId: number;
+  name: string;
+  profileImg: string;
+}
+
+interface GroupInfo {
+  groupId: number;
+  name: string;
+  startedAt: string;
+  inviteCode: string;
+  members: Member[];
+}
 
 const MyPage = () => {
   const navigate = useNavigate();
+  const [daysTogether, setDaysTogether] = useState(0);
+
+  const { data: groupRes } = useQuery(['myGroup'], getMyGroup);
+  const group = groupRes?.data.data ?? groupRes?.data;
+
+  useEffect(() => {
+    if (group) {
+      const start = new Date(group.startedAt);
+      const diff = Math.floor(
+        (new Date().getTime() - start.getTime()) / (1000 * 60 * 60 * 24)
+      );
+      setDaysTogether(diff);
+    }
+  }, [group]);
   const GoList = () => {
     navigate("/list");
   };
@@ -29,32 +60,31 @@ const MyPage = () => {
   return (
     <S.Layout>
       <S.Header>
-        <img src={ShellIcon} />
+        <ShellIcon />
         <S.Shell>999</S.Shell>
       </S.Header>
       <S.TextContainer>
-        <span>김가네</span>
+        <span>{group?.name ?? ""}</span>
         <S.MeetTextCotainer>
           <>만난지</>
-          <S.BlueText>7315</S.BlueText>
+          <S.BlueText>{daysTogether}</S.BlueText>
           <>일째</>
         </S.MeetTextCotainer>
         <S.MyGroupNames>
-          <S.Name>띠연</S.Name>
-          <S.HeartIcon src={Heart} />
-          <S.Name>김사장</S.Name>
-          <S.HeartIcon src={Heart} />
-          <S.Name>엄마다</S.Name>
-          <S.HeartIcon src={Heart} />
-          <S.Name>ㅅㅇ</S.Name>
+          {group?.members.map((member, idx) => (
+            <>
+              <S.Name key={member.userId}>{member.name}</S.Name>
+              {idx < group.members.length - 1 && <S.HeartIcon as={HeartIcon} />}
+            </>
+          ))}
         </S.MyGroupNames>
       </S.TextContainer>
       <S.Center>
         <S.CopyContainer>
           <S.CopyTitle>나의 코드 복사</S.CopyTitle>
           <S.CodeContainer>
-            <S.Code>ABCDCDE</S.Code>
-            <img src={CopyIcon} style={{ cursor: "pointer" }} />
+            <S.Code>{group?.inviteCode ?? ""}</S.Code>
+            <CopyIcon style={{ cursor: "pointer" }} />
           </S.CodeContainer>
         </S.CopyContainer>
       </S.Center>
@@ -62,19 +92,19 @@ const MyPage = () => {
       <S.SelectList>
         <S.Colum>
           <S.Text>초대 코드 입력하기</S.Text>
-          <S.Right src={Right} />
+          <S.Right as={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>알림</S.Text>
-          <S.Right src={Right} />
+          <S.Right as={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>공지사항</S.Text>
-          <S.Right src={Right} />
+          <S.Right as={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>자주 묻는 질문</S.Text>
-          <S.Right src={Right} />
+          <S.Right as={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>버전</S.Text>
@@ -88,14 +118,10 @@ const MyPage = () => {
         </S.Colum>
       </S.SelectList>
       <S.Footer>
-        <img src={GrayHome} onClick={GoHome} style={{ cursor: "pointer" }} />
-        <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
-        <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
-        <img
-          src={DarkProfile}
-          onClick={GoMyPage}
-          style={{ cursor: "pointer" }}
-        />
+        <GrayhomeIcon onClick={GoHome} style={{ cursor: "pointer" }} />
+        <CalendarIcon onClick={GoCal} style={{ cursor: "pointer" }} />
+        <NoteIcon onClick={GoList} style={{ cursor: "pointer" }} />
+        <DartprofileIcon onClick={GoMyPage} style={{ cursor: "pointer" }} />
       </S.Footer>
     </S.Layout>
   );

@@ -1,18 +1,25 @@
-import { SetStateAction, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import * as S from "./style";
+import { SetStateAction, useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
+import * as S from './style';
+import { setNickname } from '@/api';
 
 const SettingName = () => {
-  const [inputName, setInputName] = useState("");
+  const [inputName, setInputName] = useState('');
   const navigate = useNavigate();
 
-  const handleChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+  const { mutate } = useMutation(setNickname, {
+    onSuccess: () => navigate('/start-content'),
+    onError: (e) => console.error('닉네임 설정 실패', e),
+  });
+
+  const handleChange = (e: { target: { value: SetStateAction<string> } }) => {
     setInputName(e.target.value);
   };
 
   const handleConfirm = () => {
     if (inputName.length > 0) {
-      navigate("/start-content");
+      mutate(inputName);
     }
   };
 
