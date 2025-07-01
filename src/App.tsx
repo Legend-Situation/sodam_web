@@ -20,7 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
-          path="/login/oauth2/code/kakao"
+          path="/auth/kakao/callback"
           element={<KakaoRedirectHandler />}
         />
         <Route path="/named" element={<SettingName />} />

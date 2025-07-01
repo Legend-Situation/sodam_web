@@ -1,42 +1,44 @@
 import { useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useLocation } from "react-router-dom";
+import styled from "styled-components";
 
 const KakaoRedirectHandler = () => {
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
-  const code = searchParams.get("code"); // URL에서 code 가져오기
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+  const accessToken = searchParams.get("accessToken");
+  const refreshToken = searchParams.get("refreshToken");
 
   useEffect(() => {
-    console.log("인가 코드:", code);
-
-    if (code) {
-      const login = async () => {
-        try {
-          const response = await axios.post(
-            "https://2fa8-1-215-227-114.ngrok-free.app/users/login",
-            {
-              code,
-              deviceToken: "someString",
-            },
-          );
-
-          console.log("로그인 성공:", response.data);
-          navigate("/named"); // 로그인 성공 후 메인 페이지로 이동
-        } catch (error) {
-          console.error("로그인 실패:", error);
-          alert("로그인에 실패했습니다.");
-          navigate("/"); // 로그인 실패 시 메인으로
-        }
-      };
-      login();
+    if (accessToken && refreshToken) {
+      localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("refreshToken", refreshToken);
+      window.location.href = "/named";
     } else {
-      console.error("인가 코드가 없습니다.");
-      navigate("/"); // code가 없으면 메인으로 이동
+      alert("로그인에 실패했습니다. 다시 시도해주세요.");
     }
-  }, [navigate]);
+  }, [accessToken, refreshToken]);
 
-  return <p>로그인 처리 중...</p>;
+  return (
+    <Layout>
+      <Message>로그인 중...</Message>
+    </Layout>
+  );
 };
 
 export default KakaoRedirectHandler;
+
+const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+`;
+
+const Message = styled.p`
+  font-size: 1.2rem;
+  color: #333;
+`;
