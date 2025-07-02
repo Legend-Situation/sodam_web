@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as S from "./style";
-import Note from "../../assets/graynote.svg";
-import HomeIcon from "../../assets/grayhome.svg";
-import CalendarIcon from "../../assets/dartkcalendar.svg";
-import MyPageIcon from "../../assets/mypage.svg";
-import CalendarImg from "../../assets/calendarImg.svg";
-import Edit from "../../assets/edit.svg";
-import goToAnswer from "../../assets/goToAnswer.svg";
+import Note from "@/components/Icons/Graynote";
+import HomeIcon from "@/components/Icons/Grayhome";
+import CalendarIcon from "@/components/Icons/Dartkcalendar";
+import MyPageIcon from "@/components/Icons/Mypage";
+import CalendarImg from "@/components/Icons/CalendarImg";
+import Edit from "@/components/Icons/Edit";
+import GoToAnswer from "@/components/Icons/GoToAnswer";
 
 const Calendar: React.FC = () => {
   const navigate = useNavigate();
@@ -21,44 +21,21 @@ const Calendar: React.FC = () => {
 
   return (
     <S.Layout>
-      <img
-        src={CalendarImg}
-        alt="Calendar"
+      <CalendarImg
         style={{ margin: "52px", cursor: "pointer" }}
         onClick={ToggleModal}
       />
-      <S.EditImg
-        src={Edit}
-        onClick={ToggleModal}
-        style={{ cursor: "pointer" }}
-      />
+      <S.EditImg onClick={ToggleModal} style={{ cursor: "pointer" }} />
       <S.Footer>
-        <img
-          src={HomeIcon}
-          onClick={GoHome}
-          style={{ cursor: "pointer" }}
-          alt="Home"
-        />
-        <img src={CalendarIcon} style={{ cursor: "pointer" }} alt="Calendar" />
-        <img
-          src={Note}
-          onClick={GoList}
-          style={{ cursor: "pointer" }}
-          alt="Note"
-        />
-        <img
-          src={MyPageIcon}
-          onClick={GoMyPage}
-          style={{ cursor: "pointer" }}
-          alt="My Page"
-        />
+        <HomeIcon onClick={GoHome} style={{ cursor: "pointer" }} />
+        <CalendarIcon style={{ cursor: "pointer" }} />
+        <Note onClick={GoList} style={{ cursor: "pointer" }} />
+        <MyPageIcon onClick={GoMyPage} style={{ cursor: "pointer" }} />
       </S.Footer>
       <S.Modal isOpen={isModalOpen}>
         <S.TextContainer>
           <h3>2월 16일 금요일</h3>
-          <img
-            src={goToAnswer}
-            alt="Go to Answer"
+          <GoToAnswer
             style={{ cursor: "pointer" }}
             onClick={GoShowAnswer}
           />

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Background from "../../assets/background.png";
+import Background from "@/assets/background.png";
+import ArrowIcon from "@/components/Icons/Arrow";
 
 export const Layout = styled.main`
   background-image: url(${Background});
@@ -16,7 +17,7 @@ export const Header = styled.header`
   justify-content: center;
   position: relative;
 `;
-export const Arrow = styled.img`
+export const Arrow = styled(ArrowIcon)`
   position: absolute;
   left: 20px;
 `;

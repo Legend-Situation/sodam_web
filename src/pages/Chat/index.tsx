@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./style";
-import Send from "../../assets/send.svg";
-import Arrow from "../../assets/arrow.svg";
+import Send from "@/components/Icons/Send";
+import Arrow from "@/components/Icons/Arrow";
 import { useNavigate } from "react-router-dom";
 
 interface Comment {
@@ -43,7 +43,7 @@ const Chat = () => {
   return (
     <S.Layout>
       <S.Header>
-        <S.Arrow src={Arrow} onClick={GoHome} />
+        <S.Arrow onClick={GoHome} />
         <span>질문 #12</span>
       </S.Header>
       <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
@@ -79,14 +79,7 @@ const Chat = () => {
           value={inputValue}
           onChange={handleInputChange}
         />
-        <img
-          src={Send}
-          width={24}
-          height={24}
-          onClick={handleSendClick}
-          style={{ cursor: "pointer" }}
-          alt="Send"
-        />
+        <Send width={24} height={24} onClick={handleSendClick} style={{ cursor: "pointer" }} />
       </S.InputContainer>
     </S.Layout>
   );

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Background from "../../assets/background.png";
+import Background from "@/assets/background.png";
+import EditIcon from "@/components/Icons/Edit";
 
 interface ModalProps {
   isOpen: boolean;
@@ -16,7 +17,7 @@ export const Layout = styled.main`
   position: relative;
 `;
 
-export const EditImg = styled.img`
+export const EditImg = styled(EditIcon)`
   margin: 80px 0 0 300px;
 `;
 

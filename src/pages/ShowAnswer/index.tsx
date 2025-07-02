@@ -1,9 +1,9 @@
 import * as S from "./style";
-import Write from "../../assets/write.svg";
-import Close from "../../assets/close.svg";
-import Happy from "../../assets/happy.png";
-import Blur from "../../assets/blur.svg";
-import Chat from "../../assets/chat.svg";
+import Write from "@/components/Icons/Write";
+import Close from "@/components/Icons/Close";
+import Happy from "@/assets/happy.png";
+import Blur from "@/components/Icons/Blur";
+import Chat from "@/components/Icons/Chat";
 import { useNavigate } from "react-router-dom";
 
 const ShowAnswer = () => {
@@ -24,9 +24,9 @@ const ShowAnswer = () => {
   return (
     <S.Layout>
       <S.Header>
-        <S.WriteIcon src={Write} onClick={handleGo} />
+        <S.WriteIcon onClick={handleGo} />
         <S.Title>김가족 일기</S.Title>
-        <S.CloseIcon src={Close} onClick={GoClose} />
+        <S.CloseIcon onClick={GoClose} />
       </S.Header>
       <S.MainContainer>
         <S.QuestionNumberContainer>
@@ -82,7 +82,7 @@ const ShowAnswer = () => {
           <S.AnswerText1>아빠는 토키, 엄마는 양, 오빠는 타조</S.AnswerText1>
         </S.Answer2>
       </S.MainContainer>
-      <S.ChatIcon src={Chat} onClick={GoChat} />
+      <S.ChatIcon onClick={GoChat} />
     </S.Layout>
   );
 };
