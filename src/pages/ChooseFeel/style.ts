@@ -81,6 +81,8 @@ export const Question = styled.span`
 export const Answer = styled.textarea`
   width: 90%;
   height: 100px;
+  background-color: #ffffff;
+  color: #000000;
   border-radius: 8px;
   border: 1px solid #dfdfdf;
   padding: 12px 16px;

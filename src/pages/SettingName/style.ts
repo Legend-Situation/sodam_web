@@ -38,7 +38,7 @@ export const Named = styled.input`
   outline: none;
   font-size: 16px;
   background-color: #ffffff;
-  color: #c2c2c2;
+  color: #000000;
 `;
 
 export const CheckBtn = styled.button<{ isActive: boolean }>`

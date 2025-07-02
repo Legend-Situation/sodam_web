@@ -1,10 +1,12 @@
 import { SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
+import { useUpdateNickname } from "@/api";
 
 const SettingName = () => {
   const [inputName, setInputName] = useState("");
   const navigate = useNavigate();
+  const updateNickname = useUpdateNickname();
 
   const handleChange = (e: { target: { value: SetStateAction<string>; }; }) => {
     setInputName(e.target.value);
@@ -12,7 +14,10 @@ const SettingName = () => {
 
   const handleConfirm = () => {
     if (inputName.length > 0) {
-      navigate("/start-content");
+      updateNickname.mutate(
+        { nickname: inputName },
+        { onSuccess: () => navigate("/start-content") }
+      );
     }
   };
 

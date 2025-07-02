@@ -7,17 +7,23 @@ import Angry from "@/assets/angry.png";
 import Arrow from "@/components/Icons/Arrow";
 import Check from "@/components/Icons/Check";
 import { useNavigate } from "react-router-dom";
+import { useAnswerQuestion } from "@/api";
 
 const ChooseFeel = () => {
   const navigate = useNavigate();
   const [selectedFeelId, setSelectedFeelId] = useState<number | null>(null);
+  const [answer, setAnswer] = useState("");
+  const answerQuestion = useAnswerQuestion();
 
   const GoBack = () => {
     navigate("/home");
   };
 
   const GoAnswer = () => {
-    navigate("/show-answer");
+    answerQuestion.mutate(
+      { groupId: 1, answer, weather: "맑음" },
+      { onSuccess: () => navigate("/show-answer") }
+    );
   };
 
   const Feel = [
@@ -52,7 +58,11 @@ const ChooseFeel = () => {
         <S.QuestionContainer>
           <S.QuestionNumber>질문 #1</S.QuestionNumber>
           <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
-          <S.Answer placeholder="답변을 입력하세요." />
+          <S.Answer
+            placeholder="답변을 입력하세요."
+            value={answer}
+            onChange={e => setAnswer(e.target.value)}
+          />
         </S.QuestionContainer>
       </S.Center>
     </S.Layout>

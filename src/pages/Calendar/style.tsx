@@ -45,7 +45,8 @@ export const Modal = styled.div<ModalProps>`
 export const Input = styled.textarea`
   width: 350px;
   height: 200px;
-  background: #f9f9f9;
+  background: #ffffff;
+  color: #000000;
   border-radius: 8px;
   border: none;
   margin-left: 5px;

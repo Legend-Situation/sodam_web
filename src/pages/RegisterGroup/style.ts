@@ -31,6 +31,8 @@ export const GroupNameInput = styled.input`
   outline: none;
   font-size: 16px;
   margin: 8px 0 20px 0;
+  background-color: #ffffff;
+  color: #000000;
 `;
 
 export const StartDateInput = styled.input`
@@ -41,6 +43,8 @@ export const StartDateInput = styled.input`
   outline: none;
   font-size: 16px;
   margin: 8px 0 20px 0;
+  background-color: #ffffff;
+  color: #000000;
 `;
 
 export const BtnContainer = styled.div`

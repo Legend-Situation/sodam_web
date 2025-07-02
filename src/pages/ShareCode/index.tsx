@@ -6,7 +6,7 @@ import CopyIcon from "../../assets/copyIcon.svg";
 const ShareCode = () => {
   const [copied, setCopied] = useState(false);
   const navigate = useNavigate();
-  const code = "ABCDCDE";
+  const code = localStorage.getItem("inviteCode") ?? "";
 
   const handleCopy = async () => {
     try {

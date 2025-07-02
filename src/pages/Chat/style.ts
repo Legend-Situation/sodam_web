@@ -51,6 +51,8 @@ export const InputContainer = styled.div`
 export const Input = styled.input`
   width: 90%;
   height: 90%;
+  background-color: #ffffff;
+  color: #000000;
   border: none;
   padding: 0 20px;
   font-size: 16px;

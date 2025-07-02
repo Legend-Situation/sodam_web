@@ -8,16 +8,22 @@ import MyPageIcon from "@/components/Icons/Mypage";
 import CalendarImg from "@/components/Icons/CalendarImg";
 import Edit from "@/components/Icons/Edit";
 import GoToAnswer from "@/components/Icons/GoToAnswer";
+import { useCreateMemo } from "@/api";
 
 const Calendar: React.FC = () => {
   const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
+  const [content, setContent] = useState("");
+  const createMemo = useCreateMemo();
 
   const GoHome = () => navigate("/home");
   const GoList = () => navigate("/list");
   const GoMyPage = () => navigate("/my-page");
   const ToggleModal = () => setModalOpen(!isModalOpen);
-  const GoShowAnswer = () => navigate("/show-answer");
+  const GoShowAnswer = () => {
+    createMemo.mutate({ groupId: 1, date: "2025-02-24", content });
+    navigate("/show-answer");
+  };
 
   return (
     <S.Layout>
@@ -41,7 +47,11 @@ const Calendar: React.FC = () => {
           />
         </S.TextContainer>
 
-        <S.Input placeholder="일정 내용을 입력하세요..." />
+        <S.Input
+          placeholder="일정 내용을 입력하세요..."
+          value={content}
+          onChange={e => setContent(e.target.value)}
+        />
       </S.Modal>
     </S.Layout>
   );
