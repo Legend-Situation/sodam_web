@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import { useCreateGroup } from "@/api";
@@ -9,15 +9,11 @@ const CreateGroup = () => {
   const navigate = useNavigate();
   const createGroup = useCreateGroup();
 
-  const handleInputGroup = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handleInputGroup = (e: any) => {
     setInputGroup(e.target.value);
   };
 
-  const handleInputDate = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handleInputDate = (e: any) => {
     setInputDate(e.target.value);
   };
 

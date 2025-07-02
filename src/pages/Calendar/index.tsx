@@ -6,11 +6,10 @@ import HomeIcon from "@/components/Icons/Grayhome";
 import CalendarIcon from "@/components/Icons/Dartkcalendar";
 import MyPageIcon from "@/components/Icons/Mypage";
 import CalendarImg from "@/components/Icons/CalendarImg";
-import Edit from "@/components/Icons/Edit";
 import GoToAnswer from "@/components/Icons/GoToAnswer";
 import { useCreateMemo } from "@/api";
 
-const Calendar: React.FC = () => {
+const Calendar = () => {
   const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
   const [content, setContent] = useState("");
@@ -50,7 +49,7 @@ const Calendar: React.FC = () => {
         <S.Input
           placeholder="일정 내용을 입력하세요..."
           value={content}
-          onChange={e => setContent(e.target.value)}
+          onChange={(e: any) => setContent(e.target.value)}
         />
       </S.Modal>
     </S.Layout>

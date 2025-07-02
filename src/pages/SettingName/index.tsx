@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import { useUpdateNickname } from "@/api";
@@ -8,7 +8,7 @@ const SettingName = () => {
   const navigate = useNavigate();
   const updateNickname = useUpdateNickname();
 
-  const handleChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+  const handleChange = (e: any) => {
     setInputName(e.target.value);
   };
 

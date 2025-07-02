@@ -14,4 +14,6 @@ export const useJoinGroup = () =>
   );
 
 export const useMyGroup = () =>
-  useQuery(['group', 'me'], () => axios.get('/group/me').then(res => res.data));
+  useQuery(['group', 'me'], () =>
+    axios.get('/group/me').then((res: any) => res.data)
+  );

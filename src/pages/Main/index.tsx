@@ -1,6 +1,4 @@
 import * as S from "./style";
-import Logo from "@/components/Icons/Logo";
-import CLogo from "@/components/Icons/CLogo";
 
 const Main = () => {
   const handleKakaoLogin = () => {

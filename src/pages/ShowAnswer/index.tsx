@@ -1,8 +1,5 @@
 import * as S from "./style";
-import Write from "@/components/Icons/Write";
-import Close from "@/components/Icons/Close";
 import Happy from "@/assets/happy.png";
-import Chat from "@/components/Icons/Chat";
 import { useNavigate } from "react-router-dom";
 import { useAnswers } from "@/api";
 

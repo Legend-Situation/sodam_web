@@ -46,7 +46,8 @@ export const FeelContainer = styled.div<{ isSelected: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid ${(props) => (props.isSelected ? "#84C3EE" : "#dfdfdf")};
+  border: 1px solid ${(props: any) =>
+    props.isSelected ? "#84C3EE" : "#dfdfdf"};
   border-radius: 8px;
   padding: 5px;
   cursor: pointer;

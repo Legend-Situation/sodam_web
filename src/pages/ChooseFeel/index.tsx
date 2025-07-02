@@ -11,7 +11,7 @@ import { useAnswerQuestion } from "@/api";
 
 const ChooseFeel = () => {
   const navigate = useNavigate();
-  const [selectedFeelId, setSelectedFeelId] = useState<number | null>(null);
+  const [selectedFeelId, setSelectedFeelId] = useState(null as number | null);
   const [answer, setAnswer] = useState("");
   const answerQuestion = useAnswerQuestion();
 
@@ -61,7 +61,7 @@ const ChooseFeel = () => {
           <S.Answer
             placeholder="답변을 입력하세요."
             value={answer}
-            onChange={e => setAnswer(e.target.value)}
+            onChange={(e: any) => setAnswer(e.target.value)}
           />
         </S.QuestionContainer>
       </S.Center>

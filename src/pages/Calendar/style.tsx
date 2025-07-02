@@ -33,7 +33,7 @@ export const Footer = styled.div`
 
 export const Modal = styled.div<ModalProps>`
   position: fixed;
-  bottom: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  bottom: ${({ isOpen }: any) => (isOpen ? "0" : "-100%")};
   left: 0;
   width: 100%;
   height: 350px;

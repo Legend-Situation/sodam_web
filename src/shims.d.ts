@@ -2,6 +2,8 @@ declare module '*.svg' { const src: string; export default src; }
 declare module '*.png' { const src: string; export default src; }
 declare module 'react';
 declare module 'react-dom';
+declare module 'react-dom/client';
+declare module '*.css';
 declare module 'react-router-dom';
 declare module 'styled-components';
 declare module 'axios';
