@@ -7,13 +7,13 @@ import CalendarIcon from "@/components/Icons/Dartkcalendar";
 import MyPageIcon from "@/components/Icons/Mypage";
 import CalendarImg from "@/components/Icons/CalendarImg";
 import GoToAnswer from "@/components/Icons/GoToAnswer";
-import { useCreateMemo } from "@/api";
+import { useCreateMemoMutation } from "@/api";
 
 const Calendar = () => {
   const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
   const [content, setContent] = useState("");
-  const createMemo = useCreateMemo();
+  const createMemo = useCreateMemoMutation();
 
   const GoHome = () => navigate("/home");
   const GoList = () => navigate("/list");

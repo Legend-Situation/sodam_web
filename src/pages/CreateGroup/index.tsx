@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import { useCreateGroup } from "@/api";
+import { useCreateGroupMutation } from "@/api";
 
 const CreateGroup = () => {
   const [inputGroup, setInputGroup] = useState("");
   const [inputDate, setInputDate] = useState("");
   const navigate = useNavigate();
-  const createGroup = useCreateGroup();
+  const createGroup = useCreateGroupMutation();
 
   const handleInputGroup = (e: any) => {
     setInputGroup(e.target.value);

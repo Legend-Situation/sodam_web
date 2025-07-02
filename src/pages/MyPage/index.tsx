@@ -1,13 +1,13 @@
 import * as S from "./style";
-import ShellIcon from "../../assets/shell.svg";
-import Heart from "../../assets/heart.svg";
-import CopyIcon from "../../assets/copyIcon.svg";
-import Right from "../../assets/right.svg";
+import ShellIcon from "@/components/Icons/Shell";
+import Heart from "@/components/Icons/Heart";
+import CopyIcon from "@/components/Icons/CopyIcon";
+import Right from "@/components/Icons/Right";
 import { useNavigate } from "react-router-dom";
-import Note from "../../assets/note.svg";
-import CalendarIcon from "../../assets/calendar.svg";
-import GrayHome from "../../assets/grayhome.svg";
-import DarkProfile from "../../assets/dartprofile.svg";
+import Note from "@/components/Icons/Note";
+import CalendarIcon from "@/components/Icons/Calendar";
+import GrayHome from "@/components/Icons/Grayhome";
+import DarkProfile from "@/components/Icons/Dartprofile";
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const MyPage = () => {
   return (
     <S.Layout>
       <S.Header>
-        <img src={ShellIcon} />
+        <ShellIcon />
         <S.Shell>999</S.Shell>
       </S.Header>
       <S.TextContainer>
@@ -41,11 +41,11 @@ const MyPage = () => {
         </S.MeetTextCotainer>
         <S.MyGroupNames>
           <S.Name>띠연</S.Name>
-          <S.HeartIcon src={Heart} />
+          <S.HeartIcon as={Heart} />
           <S.Name>김사장</S.Name>
-          <S.HeartIcon src={Heart} />
+          <S.HeartIcon as={Heart} />
           <S.Name>엄마다</S.Name>
-          <S.HeartIcon src={Heart} />
+          <S.HeartIcon as={Heart} />
           <S.Name>ㅅㅇ</S.Name>
         </S.MyGroupNames>
       </S.TextContainer>
@@ -54,7 +54,7 @@ const MyPage = () => {
           <S.CopyTitle>나의 코드 복사</S.CopyTitle>
           <S.CodeContainer>
             <S.Code>ABCDCDE</S.Code>
-            <img src={CopyIcon} style={{ cursor: "pointer" }} />
+            <CopyIcon style={{ cursor: "pointer" }} />
           </S.CodeContainer>
         </S.CopyContainer>
       </S.Center>
@@ -62,19 +62,19 @@ const MyPage = () => {
       <S.SelectList>
         <S.Colum>
           <S.Text>초대 코드 입력하기</S.Text>
-          <S.Right src={Right} />
+          <S.Right as={Right} />
         </S.Colum>
         <S.Colum>
           <S.Text>알림</S.Text>
-          <S.Right src={Right} />
+          <S.Right as={Right} />
         </S.Colum>
         <S.Colum>
           <S.Text>공지사항</S.Text>
-          <S.Right src={Right} />
+          <S.Right as={Right} />
         </S.Colum>
         <S.Colum>
           <S.Text>자주 묻는 질문</S.Text>
-          <S.Right src={Right} />
+          <S.Right as={Right} />
         </S.Colum>
         <S.Colum>
           <S.Text>버전</S.Text>
@@ -88,14 +88,10 @@ const MyPage = () => {
         </S.Colum>
       </S.SelectList>
       <S.Footer>
-        <img src={GrayHome} onClick={GoHome} style={{ cursor: "pointer" }} />
-        <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
-        <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
-        <img
-          src={DarkProfile}
-          onClick={GoMyPage}
-          style={{ cursor: "pointer" }}
-        />
+        <GrayHome onClick={GoHome} style={{ cursor: "pointer" }} />
+        <CalendarIcon onClick={GoCal} style={{ cursor: "pointer" }} />
+        <Note onClick={GoList} style={{ cursor: "pointer" }} />
+        <DarkProfile onClick={GoMyPage} style={{ cursor: "pointer" }} />
       </S.Footer>
     </S.Layout>
   );

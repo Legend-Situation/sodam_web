@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import { useUpdateNickname } from "@/api";
+import { useUpdateNicknameMutation } from "@/api";
 
 const SettingName = () => {
   const [inputName, setInputName] = useState("");
   const navigate = useNavigate();
-  const updateNickname = useUpdateNickname();
+  const updateNickname = useUpdateNicknameMutation();
 
   const handleChange = (e: any) => {
     setInputName(e.target.value);

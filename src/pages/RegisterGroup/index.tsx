@@ -1,12 +1,12 @@
 import { useState } from "react";
 import * as S from "./style";
 import { useNavigate } from "react-router-dom";
-import { useJoinGroup } from "@/api";
+import { useJoinGroupMutation } from "@/api";
 
 const RegisterGroup = () => {
   const [inputGroup, setInputGroup] = useState("");
   const navigate = useNavigate();
-  const joinGroup = useJoinGroup();
+  const joinGroup = useJoinGroupMutation();
 
   const handleInputGroup = (e: any) => {
     setInputGroup(e.target.value);

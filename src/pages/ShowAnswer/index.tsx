@@ -1,11 +1,11 @@
 import * as S from "./style";
 import Happy from "@/assets/happy.png";
 import { useNavigate } from "react-router-dom";
-import { useAnswers } from "@/api";
+import { useAnswersQuery } from "@/api";
 
 const ShowAnswer = () => {
   const navigate = useNavigate();
-  const { data } = useAnswers(1);
+  const { data } = useAnswersQuery(1);
 
   const handleGo = () => {
     navigate("/choose-feel");

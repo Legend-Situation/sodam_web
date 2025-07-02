@@ -7,13 +7,13 @@ import Angry from "@/assets/angry.png";
 import Arrow from "@/components/Icons/Arrow";
 import Check from "@/components/Icons/Check";
 import { useNavigate } from "react-router-dom";
-import { useAnswerQuestion } from "@/api";
+import { useAnswerQuestionMutation } from "@/api";
 
 const ChooseFeel = () => {
   const navigate = useNavigate();
   const [selectedFeelId, setSelectedFeelId] = useState(null as number | null);
   const [answer, setAnswer] = useState("");
-  const answerQuestion = useAnswerQuestion();
+  const answerQuestion = useAnswerQuestionMutation();
 
   const GoBack = () => {
     navigate("/home");

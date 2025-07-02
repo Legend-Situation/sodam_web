@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import CopyIcon from "../../assets/copyIcon.svg";
+import CopyIcon from "@/components/Icons/CopyIcon";
 
 const ShareCode = () => {
   const [copied, setCopied] = useState(false);
@@ -38,7 +38,7 @@ const ShareCode = () => {
         <S.CopyTitle>나의 코드 복사</S.CopyTitle>
         <S.CodeContainer>
           <S.Code>{code}</S.Code>
-          <img src={CopyIcon} onClick={handleCopy} style={{ cursor: "pointer" }} />
+          <CopyIcon onClick={handleCopy} style={{ cursor: 'pointer' }} />
         </S.CodeContainer>
       </S.CopyContainer>
 
