@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/close.svg';
 
-const Close = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Close = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'close'} {...props} />
 );
 

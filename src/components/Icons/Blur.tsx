@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/blur.svg';
 
-const Blur = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Blur = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'blur'} {...props} />
 );
 

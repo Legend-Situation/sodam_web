@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/note.svg';
 
-const Note = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Note = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'note'} {...props} />
 );
 

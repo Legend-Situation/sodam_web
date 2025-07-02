@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/market.svg';
 
-const Market = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Market = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'market'} {...props} />
 );
 

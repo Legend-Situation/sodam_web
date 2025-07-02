@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/calendarImg.svg';
 
-const CalendarImg = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const CalendarImg = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'calendarImg'} {...props} />
 );
 

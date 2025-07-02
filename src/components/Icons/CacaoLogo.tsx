@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/cacaoLogo.svg';
 
-const CacaoLogo = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const CacaoLogo = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'cacaoLogo'} {...props} />
 );
 

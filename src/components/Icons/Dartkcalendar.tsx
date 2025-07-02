@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/dartkcalendar.svg';
 
-const Dartkcalendar = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Dartkcalendar = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'dartkcalendar'} {...props} />
 );
 

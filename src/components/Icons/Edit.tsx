@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/edit.svg';
 
-const Edit = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Edit = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'edit'} {...props} />
 );
 

@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/arrow.svg';
 
-const Arrow = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Arrow = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'arrow'} {...props} />
 );
 

@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/variant.svg';
 
-const Variant = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Variant = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'variant'} {...props} />
 );
 

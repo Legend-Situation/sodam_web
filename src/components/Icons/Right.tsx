@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/right.svg';
 
-const Right = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Right = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'right'} {...props} />
 );
 

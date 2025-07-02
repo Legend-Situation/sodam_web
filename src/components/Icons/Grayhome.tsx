@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/grayhome.svg';
 
-const Grayhome = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Grayhome = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'grayhome'} {...props} />
 );
 

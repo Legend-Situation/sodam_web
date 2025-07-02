@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/graynote.svg';
 
-const Graynote = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Graynote = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'graynote'} {...props} />
 );
 

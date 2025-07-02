@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/logo.svg';
 
-const Logo = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Logo = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'logo'} {...props} />
 );
 

@@ -1,7 +1,6 @@
-import React from "react";
 import imgSrc from '@/assets/write.svg';
 
-const Write = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+const Write = (props: any) => (
   <img src={imgSrc} alt={props.alt ?? 'write'} {...props} />
 );
 
