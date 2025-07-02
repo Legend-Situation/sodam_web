@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Background from "../../assets/background.png";
+import Background from "@/assets/background.png";
+import EditIcon from "@/components/Icons/Edit";
 
 interface ModalProps {
   isOpen: boolean;
@@ -16,7 +17,7 @@ export const Layout = styled.main`
   position: relative;
 `;
 
-export const EditImg = styled.img`
+export const EditImg = styled(EditIcon)`
   margin: 80px 0 0 300px;
 `;
 
@@ -32,7 +33,7 @@ export const Footer = styled.div`
 
 export const Modal = styled.div<ModalProps>`
   position: fixed;
-  bottom: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  bottom: ${({ isOpen }: any) => (isOpen ? "0" : "-100%")};
   left: 0;
   width: 100%;
   height: 350px;
@@ -44,7 +45,8 @@ export const Modal = styled.div<ModalProps>`
 export const Input = styled.textarea`
   width: 350px;
   height: 200px;
-  background: #f9f9f9;
+  background: #ffffff;
+  color: #000000;
   border-radius: 8px;
   border: none;
   margin-left: 5px;

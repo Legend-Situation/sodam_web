@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import Background from "../../assets/background.png";
+import Background from "@/assets/background.png";
+import LogoIcon from "@/components/Icons/Logo";
+import CLogoIcon from "@/components/Icons/CLogo";
 
 export const Layout = styled.main`
   background-image: url(${Background});
@@ -28,7 +30,7 @@ export const Detail = styled.span`
   color: #5c5c5c;
 `;
 
-export const Logo = styled.img`
+export const Logo = styled(LogoIcon)`
   width: fit-content;
 `;
 
@@ -45,7 +47,7 @@ export const LoginContainer = styled.div`
   cursor: pointer;
 `;
 
-export const CLogo = styled.img`
+export const CLogo = styled(CLogoIcon)`
   position: fixed;
   left: 55px;
 `;

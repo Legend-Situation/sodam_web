@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import Background from "../../assets/background.png";
+import Background from "@/assets/background.png";
+import WriteSvg from "@/components/Icons/Write";
+import CloseSvg from "@/components/Icons/Close";
+import ChatSvg from "@/components/Icons/Chat";
 
 export const Layout = styled.main`
   background-image: url(${Background});
@@ -17,11 +20,11 @@ export const Header = styled.header`
   justify-content: center;
   position: relative;
 `;
-export const WriteIcon = styled.img`
+export const WriteIcon = styled(WriteSvg)`
   position: absolute;
   left: 28px;
 `;
-export const CloseIcon = styled.img`
+export const CloseIcon = styled(CloseSvg)`
   position: absolute;
   right: 28px;
 `;
@@ -80,7 +83,7 @@ export const Answer2 = styled.div`
   border-radius: 8px;
   padding: 16px;
 `;
-export const ChatIcon = styled.img`
+export const ChatIcon = styled(ChatSvg)`
   position: absolute;
   bottom: 30px;
   right: 20px;

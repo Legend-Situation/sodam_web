@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import * as S from "./style";
-import Send from "../../assets/send.svg";
-import Arrow from "../../assets/arrow.svg";
+import Send from "@/components/Icons/Send";
 import { useNavigate } from "react-router-dom";
 
 interface Comment {
@@ -10,8 +9,8 @@ interface Comment {
 }
 
 const Chat = () => {
-  const [inputValue, setInputValue] = useState<string>("");
-  const [comments, setComments] = useState<Comment[]>([]);
+  const [inputValue, setInputValue] = useState("" as string);
+  const [comments, setComments] = useState([] as Comment[]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const Chat = () => {
     }
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: any) => {
     setInputValue(e.target.value);
   };
 
@@ -43,7 +42,7 @@ const Chat = () => {
   return (
     <S.Layout>
       <S.Header>
-        <S.Arrow src={Arrow} onClick={GoHome} />
+        <S.Arrow onClick={GoHome} />
         <span>질문 #12</span>
       </S.Header>
       <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
@@ -60,7 +59,7 @@ const Chat = () => {
         <S.Chat>인정해요 그냥.</S.Chat>
       </S.OtherChatContainer>
 
-      {comments.map((comment, index) =>
+      {comments.map((comment: any, index: number) =>
         comment.author === "띠연" ? (
           <S.MyChatContainer key={index}>
             <span>나</span>
@@ -79,14 +78,7 @@ const Chat = () => {
           value={inputValue}
           onChange={handleInputChange}
         />
-        <img
-          src={Send}
-          width={24}
-          height={24}
-          onClick={handleSendClick}
-          style={{ cursor: "pointer" }}
-          alt="Send"
-        />
+        <Send width={24} height={24} onClick={handleSendClick} style={{ cursor: "pointer" }} />
       </S.InputContainer>
     </S.Layout>
   );

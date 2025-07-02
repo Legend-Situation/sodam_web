@@ -1,27 +1,36 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
+import { useCreateGroupMutation } from "@/api";
 
 const CreateGroup = () => {
   const [inputGroup, setInputGroup] = useState("");
   const [inputDate, setInputDate] = useState("");
   const navigate = useNavigate();
+  const createGroup = useCreateGroupMutation();
 
-  const handleInputGroup = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handleInputGroup = (e: any) => {
     setInputGroup(e.target.value);
   };
 
-  const handleInputDate = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handleInputDate = (e: any) => {
     setInputDate(e.target.value);
   };
 
   const handleConfirm = () => {
     if (inputGroup.length > 0 && inputDate.length > 0) {
-      navigate("/share-code");
+      createGroup.mutate(
+        { name: inputGroup, startedAt: inputDate },
+        {
+          onSuccess: (data: any) => {
+            const invite = data.data?.inviteCode;
+            if (invite) {
+              localStorage.setItem("inviteCode", invite);
+            }
+            navigate("/share-code");
+          },
+        }
+      );
     }
   };
 

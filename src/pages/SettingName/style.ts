@@ -38,7 +38,7 @@ export const Named = styled.input`
   outline: none;
   font-size: 16px;
   background-color: #ffffff;
-  color: #c2c2c2;
+  color: #000000;
 `;
 
 export const CheckBtn = styled.button<{ isActive: boolean }>`
@@ -46,9 +46,10 @@ export const CheckBtn = styled.button<{ isActive: boolean }>`
   width: 80%;
   padding: 12px 0;
   bottom: 64px;
-  background-color: ${(props) => (props.isActive ? "#84C3EE" : "#dfdfdf")};
+  background-color: ${(props: any) =>
+    props.isActive ? "#84C3EE" : "#dfdfdf"};
   border-radius: 8px;
-  color: ${(props) => (props.isActive ? "#ffffff" : "#8a8a8a")};
+  color: ${(props: any) => (props.isActive ? "#ffffff" : "#8a8a8a")};
   border: none;
-  cursor: ${(props) => (props.isActive ? "pointer" : "default")};
+  cursor: ${(props: any) => (props.isActive ? "pointer" : "default")};
 `;

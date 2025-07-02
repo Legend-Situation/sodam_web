@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./pages/Main";
-import SettingName from "./pages/SettingName";
-import ShareCode from "./pages/ShareCode";
-import CreateGroup from "./pages/CreateGroup";
-import StartConnect from "./pages/StartConnect";
-import Home from "./pages/Home";
-import RegisterGrop from "./pages/RegisterGroup";
-import ChooseFeel from "./pages/ChooseFeel";
-import Chat from "./pages/Chat";
-import List from "./pages/List";
-import ShowAnswer from "./pages/ShowAnswer";
-import MyPage from "./pages/MyPage";
-import KakaoRedirectHandler from "./pages/KakaoRedirectHandler";
-import Calendar from "./pages/Calendar";
+import Main from "@/pages/Main";
+import SettingName from "@/pages/SettingName";
+import ShareCode from "@/pages/ShareCode";
+import CreateGroup from "@/pages/CreateGroup";
+import StartConnect from "@/pages/StartConnect";
+import Home from "@/pages/Home";
+import RegisterGrop from "@/pages/RegisterGroup";
+import ChooseFeel from "@/pages/ChooseFeel";
+import Chat from "@/pages/Chat";
+import List from "@/pages/List";
+import ShowAnswer from "@/pages/ShowAnswer";
+import MyPage from "@/pages/MyPage";
+import KakaoRedirectHandler from "@/pages/KakaoRedirectHandler";
+import Calendar from "@/pages/Calendar";
 
 const App = () => {
   return (

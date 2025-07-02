@@ -31,6 +31,8 @@ export const GroupNameInput = styled.input`
   outline: none;
   font-size: 16px;
   margin: 8px 0 20px 0;
+  background-color: #ffffff;
+  color: #000000;
 `;
 
 export const StartDateInput = styled.input`
@@ -41,6 +43,8 @@ export const StartDateInput = styled.input`
   outline: none;
   font-size: 16px;
   margin: 8px 0 20px 0;
+  background-color: #ffffff;
+  color: #000000;
 `;
 
 export const BtnContainer = styled.div`
@@ -53,9 +57,10 @@ export const CheckBtn = styled.button<{ isActive: boolean }>`
   width: 80%;
   padding: 12px 0;
   bottom: 64px;
-  background-color: ${(props) => (props.isActive ? "#84C3EE" : "#dfdfdf")};
+  background-color: ${(props: any) =>
+    props.isActive ? "#84C3EE" : "#dfdfdf"};
   border-radius: 8px;
-  color: ${(props) => (props.isActive ? "#ffffff" : "#8a8a8a")};
+  color: ${(props: any) => (props.isActive ? "#ffffff" : "#8a8a8a")};
   border: none;
-  cursor: ${(props) => (props.isActive ? "pointer" : "default")};
+  cursor: ${(props: any) => (props.isActive ? "pointer" : "default")};
 `;
