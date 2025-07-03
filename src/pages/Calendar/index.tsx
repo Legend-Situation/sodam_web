@@ -50,7 +50,6 @@ const Calendar = () => {
             onClick={GoShowAnswer}
           />
         </S.TextContainer>
-
         <S.Input
           placeholder="일정 내용을 입력하세요..."
           value={content || firstMemo?.content || ""}

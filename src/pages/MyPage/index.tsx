@@ -13,22 +13,15 @@ import { useMyGroupQuery } from "@/api";
 const MyPage = () => {
   const navigate = useNavigate();
   const { data } = useMyGroupQuery();
-  const GoList = () => {
-    navigate("/list");
-  };
-  const GoCal = () => {
-    navigate("/calendar");
-  };
-  const GoMyPage = () => {
-    navigate("/my-page");
-  };
-  const Out = () => {
-    navigate("/");
-  };
-  const GoHome = () => {
-    navigate("/home");
-  };
+
+  const GoList = () => navigate("/list");
+  const GoCal = () => navigate("/calendar");
+  const GoMyPage = () => navigate("/my-page");
+  const GoHome = () => navigate("/home");
+  const Out = () => navigate("/");
+
   const members = data?.data.members || [];
+
   return (
     <S.Layout>
       <S.Header>
@@ -64,19 +57,19 @@ const MyPage = () => {
       <S.SelectList>
         <S.Colum>
           <S.Text>초대 코드 입력하기</S.Text>
-          <S.Right src={RightIcon} />
+          <S.RightIcon src={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>알림</S.Text>
-          <S.Right src={RightIcon} />
+          <S.RightIcon src={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>공지사항</S.Text>
-          <S.Right src={RightIcon} />
+          <S.RightIcon src={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>자주 묻는 질문</S.Text>
-          <S.Right src={RightIcon} />
+          <S.RightIcon src={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>버전</S.Text>

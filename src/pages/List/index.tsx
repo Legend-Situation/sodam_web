@@ -9,6 +9,7 @@ import { useGroupQuestionsQuery } from "@/api";
 const List = () => {
   const navigate = useNavigate();
   const { data } = useGroupQuestionsQuery(1);
+
   const GoQuestion = () => {
     navigate("/show-answer");
   };
@@ -21,7 +22,9 @@ const List = () => {
   const GoMyPage = () => {
     navigate("/my-page");
   };
+
   const questions = data?.data.questions || [];
+
   return (
     <S.Layout>
       <S.Header>

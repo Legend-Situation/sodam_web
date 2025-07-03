@@ -10,12 +10,9 @@ const ShareCode = () => {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code); // 클립보드에 복사
+      await navigator.clipboard.writeText(code);
       setCopied(true);
-
-      setTimeout(() => {
-        setCopied(false);
-      }, 1000); // 1초 후 메시지 숨김
+      setTimeout(() => setCopied(false), 1000);
     } catch (error) {
       console.error("복사 실패:", error);
     }
@@ -38,11 +35,10 @@ const ShareCode = () => {
         <S.CopyTitle>나의 코드 복사</S.CopyTitle>
         <S.CodeContainer>
           <S.Code>{code}</S.Code>
-          <img src={CopyIcon} onClick={handleCopy} style={{ cursor: 'pointer' }} />
+          <img src={CopyIcon} onClick={handleCopy} style={{ cursor: "pointer" }} />
         </S.CodeContainer>
       </S.CopyContainer>
 
-      {/* 복사 메시지를 CopyContainer 아래로 위치 */}
       {copied && <S.CopiedMessage>코드가 복사되었습니다.</S.CopiedMessage>}
 
       <S.CheckBtn onClick={handleConfirm}>확인</S.CheckBtn>

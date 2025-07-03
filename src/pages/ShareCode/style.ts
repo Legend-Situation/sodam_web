@@ -15,6 +15,7 @@ export const Layout = styled.main`
 export const Header = styled.header`
   padding: 62px 0 10px 0;
   font-size: 16px;
+  color: black;
 `;
 
 export const MainContainer = styled.div`
@@ -23,6 +24,7 @@ export const MainContainer = styled.div`
   align-items: center;
   padding: 159px 0 42px 0;
   font-size: 18px;
+  color: black;
 `;
 
 export const CopyContainer = styled.div`
@@ -39,6 +41,7 @@ export const CopyContainer = styled.div`
 
 export const CopyTitle = styled.span`
   font-size: 16px;
+  color: black;
 `;
 
 export const CodeContainer = styled.div`
@@ -48,6 +51,7 @@ export const CodeContainer = styled.div`
 
 export const Code = styled.span`
   font-size: 20px;
+  color: black;
 `;
 
 export const CheckBtn = styled.button`
@@ -62,6 +66,7 @@ export const CheckBtn = styled.button`
   cursor: pointer;
   position: absolute;
 `;
+
 export const CopiedMessage = styled.div`
   width: 85%;
   padding: 12px 0;
@@ -71,6 +76,6 @@ export const CopiedMessage = styled.div`
   color: white;
   outline: none;
   text-align: center;
-  position: relative; 
+  position: relative;
   margin-top: 40px;
 `;

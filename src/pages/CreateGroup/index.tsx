@@ -54,7 +54,10 @@ const CreateGroup = () => {
         />
       </S.MainContainer>
       <S.BtnContainer>
-        <S.CheckBtn isActive={inputGroup.length > 0 && inputDate.length > 0} onClick={handleConfirm}>
+        <S.CheckBtn
+          isActive={inputGroup.length > 0 && inputDate.length > 0}
+          onClick={handleConfirm}
+        >
           확인
         </S.CheckBtn>
       </S.BtnContainer>
