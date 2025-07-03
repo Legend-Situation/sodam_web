@@ -41,6 +41,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  color: #000;
 }
 
 h1 {
