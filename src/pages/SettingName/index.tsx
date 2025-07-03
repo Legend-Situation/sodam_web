@@ -1,18 +1,23 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
+import { useUpdateNicknameMutation } from "@/api";
 
 const SettingName = () => {
   const [inputName, setInputName] = useState("");
   const navigate = useNavigate();
+  const updateNickname = useUpdateNicknameMutation();
 
-  const handleChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+  const handleChange = (e: any) => {
     setInputName(e.target.value);
   };
 
   const handleConfirm = () => {
     if (inputName.length > 0) {
-      navigate("/start-content");
+      updateNickname.mutate(
+        { nickname: inputName },
+        { onSuccess: () => navigate("/start-content") }
+      );
     }
   };
 

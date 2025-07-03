@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import * as S from "./style";
 import { useNavigate } from "react-router-dom";
+import { useJoinGroupMutation } from "@/api";
 
 const RegisterGroup = () => {
   const [inputGroup, setInputGroup] = useState("");
   const navigate = useNavigate();
+  const joinGroup = useJoinGroupMutation();
 
-  const handleInputGroup = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handleInputGroup = (e: any) => {
     setInputGroup(e.target.value);
   };
   const GoHome = () => {
-    navigate("/home");
+    joinGroup.mutate(
+      { inviteCode: inputGroup },
+      { onSuccess: () => navigate("/home") }
+    );
   };
   return (
     <S.Layout>

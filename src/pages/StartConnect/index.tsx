@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import Variant from "../../assets/Variant.svg";
+import Variant from "@/assets/variant.svg";
 import SeaOtter5 from "../../assets/seaOtter5.png";
 
 const StartConnect = () => {
