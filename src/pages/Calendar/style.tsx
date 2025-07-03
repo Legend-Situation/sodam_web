@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Background from "@/assets/background.png";
-import EditIcon from "@/components/Icons/Edit";
+import EditIcon from "@/assets/edit.svg";
 
 interface ModalProps {
   isOpen: boolean;
@@ -17,7 +17,9 @@ export const Layout = styled.main`
   position: relative;
 `;
 
-export const EditImg = styled(EditIcon)`
+export const EditImg = styled.img.attrs({
+  src: EditIcon,
+})`
   margin: 80px 0 0 300px;
 `;
 
@@ -33,12 +35,12 @@ export const Footer = styled.div`
 
 export const Modal = styled.div<ModalProps>`
   position: fixed;
-  bottom: ${({ isOpen }: any) => (isOpen ? "0" : "-100%")};
+  bottom: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   left: 0;
   width: 100%;
   height: 350px;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px 20px 0 0; /* 상단 좌우 모서리만 둥글게 */
+  border-radius: 20px 20px 0 0;
   padding: 20px;
 `;
 
@@ -61,6 +63,7 @@ export const Input = styled.textarea`
     font-size: 14px;
   }
 `;
+
 export const TextContainer = styled.div`
   display: flex;
   gap: 10px;

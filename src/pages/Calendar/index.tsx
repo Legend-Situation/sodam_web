@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as S from "./style";
-import Note from "@/components/Icons/Graynote";
-import HomeIcon from "@/components/Icons/Grayhome";
-import CalendarIcon from "@/components/Icons/Dartkcalendar";
-import MyPageIcon from "@/components/Icons/Mypage";
-import CalendarImg from "@/components/Icons/CalendarImg";
-import GoToAnswer from "@/components/Icons/GoToAnswer";
+
+import Note from "@/assets/graynote.svg";
+import HomeIcon from "@/assets/grayhome.svg";
+import CalendarIcon from "@/assets/dartkcalendar.svg";
+import MyPageIcon from "@/assets/mypage.svg";
+import CalendarImg from "@/assets/calendarImg.svg";
+import GoToAnswer from "@/assets/goToAnswer.svg";
+
 import { useCreateMemoMutation } from "@/api";
 
 const Calendar = () => {
@@ -26,26 +28,27 @@ const Calendar = () => {
 
   return (
     <S.Layout>
-      <CalendarImg
+      <img
+        src={CalendarImg}
         style={{ margin: "52px", cursor: "pointer" }}
         onClick={ToggleModal}
       />
       <S.EditImg onClick={ToggleModal} style={{ cursor: "pointer" }} />
       <S.Footer>
-        <HomeIcon onClick={GoHome} style={{ cursor: "pointer" }} />
-        <CalendarIcon style={{ cursor: "pointer" }} />
-        <Note onClick={GoList} style={{ cursor: "pointer" }} />
-        <MyPageIcon onClick={GoMyPage} style={{ cursor: "pointer" }} />
+        <img src={HomeIcon} onClick={GoHome} style={{ cursor: "pointer" }} />
+        <img src={CalendarIcon} style={{ cursor: "pointer" }} />
+        <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
+        <img src={MyPageIcon} onClick={GoMyPage} style={{ cursor: "pointer" }} />
       </S.Footer>
       <S.Modal isOpen={isModalOpen}>
         <S.TextContainer>
           <h3>2월 16일 금요일</h3>
-          <GoToAnswer
+          <img
+            src={GoToAnswer}
             style={{ cursor: "pointer" }}
             onClick={GoShowAnswer}
           />
         </S.TextContainer>
-
         <S.Input
           placeholder="일정 내용을 입력하세요..."
           value={content}

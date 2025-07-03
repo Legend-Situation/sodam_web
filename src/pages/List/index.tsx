@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import Note from "@/components/Icons/Dartlist";
-import HomeIcon from "@/components/Icons/Grayhome";
-import CalendarIcon from "@/components/Icons/Calendar";
-import MyPageIcon from "@/components/Icons/Mypage";
+import Note from "@/assets/dartlist.svg";
+import HomeIcon from "@/assets/grayhome.svg";
+import CalendarIcon from "@/assets/calendar.svg";
+import MyPageIcon from "@/assets/mypage.svg";
 
 const List = () => {
   const navigate = useNavigate();
@@ -32,10 +32,10 @@ const List = () => {
         <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
       </S.QuestionContainer>
       <S.Footer>
-        <HomeIcon onClick={GoHome} style={{ cursor: "pointer" }} />
-        <CalendarIcon onClick={GoCal} style={{ cursor: "pointer" }} />
-        <Note style={{ cursor: "pointer" }} />
-        <MyPageIcon onClick={GoMyPage} style={{ cursor: "pointer" }} />
+        <img src={HomeIcon} onClick={GoHome} style={{ cursor: "pointer" }} />
+        <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
+        <img src={Note} style={{ cursor: "pointer" }} />
+        <img src={MyPageIcon} onClick={GoMyPage} style={{ cursor: "pointer" }} />
       </S.Footer>
     </S.Layout>
   );

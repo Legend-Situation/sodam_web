@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Background from "@/assets/background.png";
-import LogoIcon from "@/components/Icons/Logo";
-import CLogoIcon from "@/components/Icons/CLogo";
+import LogoIcon from "@/assets/logo.svg";
+import CLogoIcon from "@/assets/cLogo.svg";
 
 export const Layout = styled.main`
   background-image: url(${Background});
@@ -30,7 +30,9 @@ export const Detail = styled.span`
   color: #5c5c5c;
 `;
 
-export const Logo = styled(LogoIcon)`
+export const Logo = styled.img.attrs({
+  src: LogoIcon,
+})`
   width: fit-content;
 `;
 
@@ -47,10 +49,13 @@ export const LoginContainer = styled.div`
   cursor: pointer;
 `;
 
-export const CLogo = styled(CLogoIcon)`
+export const CLogo = styled.img.attrs({
+  src: CLogoIcon,
+})`
   position: fixed;
   left: 55px;
 `;
+
 export const GoLogin = styled.div`
   font-family: "Pretendard-Regular";
   font-size: 14px;

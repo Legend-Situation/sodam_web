@@ -1,5 +1,8 @@
 import * as S from "./style";
 import Happy from "@/assets/happy.png";
+import WriteSvg from "@/assets/write.svg";
+import CloseSvg from "@/assets/close.svg";
+import ChatSvg from "@/assets/chat.svg";
 import { useNavigate } from "react-router-dom";
 import { useAnswersQuery } from "@/api";
 
@@ -22,9 +25,9 @@ const ShowAnswer = () => {
   return (
     <S.Layout>
       <S.Header>
-        <S.WriteIcon onClick={handleGo} />
+        <S.WriteIcon src={WriteSvg} onClick={handleGo} />
         <S.Title>김가족 일기</S.Title>
-        <S.CloseIcon onClick={GoClose} />
+        <S.CloseIcon src={CloseSvg} onClick={GoClose} />
       </S.Header>
       <S.MainContainer>
         <S.QuestionNumberContainer>
@@ -52,7 +55,7 @@ const ShowAnswer = () => {
           </S.Answer2>
         ))}
       </S.MainContainer>
-      <S.ChatIcon onClick={GoChat} />
+      <S.ChatIcon src={ChatSvg} onClick={GoChat} />
     </S.Layout>
   );
 };

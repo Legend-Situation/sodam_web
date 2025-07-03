@@ -4,8 +4,8 @@ import Happy from "@/assets/happy.png";
 import Free from "@/assets/free.png";
 import Sad from "@/assets/sad.png";
 import Angry from "@/assets/angry.png";
-import Arrow from "@/components/Icons/Arrow";
-import Check from "@/components/Icons/Check";
+import Arrow from "@/assets/arrow.svg";
+import Check from "@/assets/check.svg";
 import { useNavigate } from "react-router-dom";
 import { useAnswerQuestionMutation } from "@/api";
 
@@ -36,8 +36,8 @@ const ChooseFeel = () => {
   return (
     <S.Layout>
       <S.Header>
-        <Arrow alt="뒤로 가기" onClick={GoBack} />
-        <S.CheckIcon as={Check} onClick={GoAnswer} />
+        <img src={Arrow} alt="뒤로 가기" onClick={GoBack} />
+        <S.CheckIcon src={Check} onClick={GoAnswer} />
       </S.Header>
       <S.Center>
         <S.ChooseFeelContainer>
