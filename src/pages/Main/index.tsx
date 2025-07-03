@@ -1,6 +1,6 @@
 import * as S from "./style";
-import Logo from "../../assets/logo.svg";
-import CLogo from "../../assets/cLogo.svg";
+import Logo from "@/assets/logo.svg";
+import CLogo from "@/assets/cLogo.svg";
 
 const Main = () => {
   const handleKakaoLogin = () => {

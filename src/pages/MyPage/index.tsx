@@ -1,13 +1,13 @@
 import * as S from "./style";
-import ShellIcon from "../../assets/shell.svg";
-import Heart from "../../assets/heart.svg";
-import CopyIcon from "../../assets/copyIcon.svg";
-import Right from "../../assets/right.svg";
+import ShellIcon from "@/assets/shell.svg";
+import Heart from "@/assets/heart.svg";
+import CopyIcon from "@/assets/copyIcon.svg";
+import Right from "@/assets/right.svg";
 import { useNavigate } from "react-router-dom";
-import Note from "../../assets/note.svg";
-import CalendarIcon from "../../assets/calendar.svg";
-import GrayHome from "../../assets/grayhome.svg";
-import DarkProfile from "../../assets/dartprofile.svg";
+import Note from "@/assets/note.svg";
+import CalendarIcon from "@/assets/calendar.svg";
+import GrayHome from "@/assets/grayhome.svg";
+import DarkProfile from "@/assets/dartprofile.svg";
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -91,11 +91,7 @@ const MyPage = () => {
         <img src={GrayHome} onClick={GoHome} style={{ cursor: "pointer" }} />
         <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
         <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
-        <img
-          src={DarkProfile}
-          onClick={GoMyPage}
-          style={{ cursor: "pointer" }}
-        />
+        <img src={DarkProfile} onClick={GoMyPage} style={{ cursor: "pointer" }} />
       </S.Footer>
     </S.Layout>
   );

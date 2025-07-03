@@ -1,13 +1,13 @@
 import * as S from "./style";
-import ShellIcon from "../../assets/shell.svg";
-import Alerm from "../../assets/alerm.svg";
-import Market from "../../assets/market.svg";
-import HomeIcon from "../../assets/home.svg";
-import CalendarIcon from "../../assets/calendar.svg";
-import MyPageIcon from "../../assets/mypage.svg";
+import ShellIcon from "@/assets/shell.svg";
+import Alerm from "@/assets/alerm.svg";
+import Market from "@/assets/market.svg";
+import HomeIcon from "@/assets/home.svg";
+import CalendarIcon from "@/assets/calendar.svg";
+import MyPageIcon from "@/assets/mypage.svg";
 import SeaOtter1 from "../../assets/seaOtter1.png";
-import Heart from "../../assets/heart.svg";
-import Note from "../../assets/note.svg";
+import Heart from "@/assets/heart.svg";
+import Note from "@/assets/note.svg";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {

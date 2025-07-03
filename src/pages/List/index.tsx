@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import Note from "../../assets/dartlist.svg";
-import HomeIcon from "../../assets/grayhome.svg";
-import CalendarIcon from "../../assets/calendar.svg";
-import MyPageIcon from "../../assets/mypage.svg";
+import Note from "@/assets/dartlist.svg";
+import HomeIcon from "@/assets/grayhome.svg";
+import CalendarIcon from "@/assets/calendar.svg";
+import MyPageIcon from "@/assets/mypage.svg";
 
 const List = () => {
   const navigate = useNavigate();
@@ -35,11 +35,7 @@ const List = () => {
         <img src={HomeIcon} onClick={GoHome} style={{ cursor: "pointer" }} />
         <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
         <img src={Note} style={{ cursor: "pointer" }} />
-        <img
-          src={MyPageIcon}
-          onClick={GoMyPage}
-          style={{ cursor: "pointer" }}
-        />
+        <img src={MyPageIcon} onClick={GoMyPage} style={{ cursor: "pointer" }} />
       </S.Footer>
     </S.Layout>
   );
