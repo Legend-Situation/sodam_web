@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as S from "./style";
+
 import Note from "@/assets/graynote.svg";
 import HomeIcon from "@/assets/grayhome.svg";
 import CalendarIcon from "@/assets/dartkcalendar.svg";
 import MyPageIcon from "@/assets/mypage.svg";
 import CalendarImg from "@/assets/calendarImg.svg";
 import GoToAnswer from "@/assets/goToAnswer.svg";
+
 import { useCreateMemoMutation } from "@/api";
 
 const Calendar = () => {
@@ -47,7 +49,6 @@ const Calendar = () => {
             onClick={GoShowAnswer}
           />
         </S.TextContainer>
-
         <S.Input
           placeholder="일정 내용을 입력하세요..."
           value={content}

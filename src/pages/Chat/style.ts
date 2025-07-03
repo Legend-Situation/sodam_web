@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Background from "@/assets/background.png";
+import ArrowIcon from "@/assets/arrow.svg";
 
 export const Layout = styled.main`
   background-image: url(${Background});
@@ -9,6 +10,7 @@ export const Layout = styled.main`
   flex-direction: column;
   font-family: "SeoulHangangM";
 `;
+
 export const Header = styled.header`
   padding: 57px 28px 30px 28px;
   display: flex;
@@ -16,20 +18,26 @@ export const Header = styled.header`
   justify-content: center;
   position: relative;
 `;
-export const Arrow = styled.img`
+
+export const Arrow = styled.img.attrs({
+  src: ArrowIcon,
+})`
   position: absolute;
   left: 20px;
 `;
+
 export const Question = styled.div`
   text-align: center;
   padding-bottom: 50px;
 `;
+
 export const OtherChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px 27px;
   font-size: 14px;
 `;
+
 export const Chat = styled.span`
   margin-top: 3px;
   background-color: #ececec;
@@ -38,6 +46,7 @@ export const Chat = styled.span`
   width: fit-content;
   font-size: 16px;
 `;
+
 export const InputContainer = styled.div`
   display: flex;
   align-items: center;
@@ -47,6 +56,7 @@ export const InputContainer = styled.div`
   height: 7%;
   background-color: white;
 `;
+
 export const Input = styled.input`
   width: 90%;
   height: 90%;

@@ -62,19 +62,19 @@ const MyPage = () => {
       <S.SelectList>
         <S.Colum>
           <S.Text>초대 코드 입력하기</S.Text>
-          <S.Right src={Right} />
+          <S.RightIcon src={Right} />
         </S.Colum>
         <S.Colum>
           <S.Text>알림</S.Text>
-          <S.Right src={Right} />
+          <S.RightIcon src={Right} />
         </S.Colum>
         <S.Colum>
           <S.Text>공지사항</S.Text>
-          <S.Right src={Right} />
+          <S.RightIcon src={Right} />
         </S.Colum>
         <S.Colum>
           <S.Text>자주 묻는 질문</S.Text>
-          <S.Right src={Right} />
+          <S.RightIcon src={Right} />
         </S.Colum>
         <S.Colum>
           <S.Text>버전</S.Text>

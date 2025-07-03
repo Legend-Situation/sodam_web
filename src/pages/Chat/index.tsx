@@ -43,7 +43,11 @@ const Chat = () => {
   return (
     <S.Layout>
       <S.Header>
-        <S.Arrow src={Arrow} onClick={GoHome} />
+        <img
+          src={Arrow}
+          onClick={GoHome}
+          style={{ cursor: "pointer", width: 24, height: 24 }}
+        />
         <span>질문 #12</span>
       </S.Header>
       <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
@@ -60,7 +64,7 @@ const Chat = () => {
         <S.Chat>인정해요 그냥.</S.Chat>
       </S.OtherChatContainer>
 
-      {comments.map((comment: any, index: number) =>
+      {comments.map((comment, index) =>
         comment.author === "띠연" ? (
           <S.MyChatContainer key={index}>
             <span>나</span>
@@ -71,7 +75,7 @@ const Chat = () => {
             <span>{comment.author}</span>
             <S.Chat>{comment.text}</S.Chat>
           </S.OtherChatContainer>
-        ),
+        )
       )}
       <S.InputContainer>
         <S.Input
@@ -85,7 +89,6 @@ const Chat = () => {
           height={24}
           onClick={handleSendClick}
           style={{ cursor: "pointer" }}
-          alt="Send"
         />
       </S.InputContainer>
     </S.Layout>
