@@ -35,11 +35,7 @@ const ShareCode = () => {
         <S.CopyTitle>나의 코드 복사</S.CopyTitle>
         <S.CodeContainer>
           <S.Code>{code}</S.Code>
-          <img
-            src={CopyIcon}
-            onClick={handleCopy}
-            style={{ cursor: "pointer" }}
-          />
+          <img src={CopyIcon} onClick={handleCopy} style={{ cursor: "pointer" }} />
         </S.CodeContainer>
       </S.CopyContainer>
 

@@ -1,21 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as S from "./style";
-
 import Note from "@/assets/graynote.svg";
 import HomeIcon from "@/assets/grayhome.svg";
 import CalendarIcon from "@/assets/dartkcalendar.svg";
 import MyPageIcon from "@/assets/mypage.svg";
 import CalendarImg from "@/assets/calendarImg.svg";
 import GoToAnswer from "@/assets/goToAnswer.svg";
-
-import { useCreateMemoMutation } from "@/api";
+import { useCreateMemoMutation, useMonthMemosQuery } from "@/api";
 
 const Calendar = () => {
   const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
   const [content, setContent] = useState("");
   const createMemo = useCreateMemoMutation();
+  const { data: memos } = useMonthMemosQuery(1, "2025-06");
 
   const GoHome = () => navigate("/home");
   const GoList = () => navigate("/list");
@@ -25,6 +24,8 @@ const Calendar = () => {
     createMemo.mutate({ groupId: 1, date: "2025-02-24", content });
     navigate("/show-answer");
   };
+
+  const firstMemo = memos?.data.memos[0];
 
   return (
     <S.Layout>
@@ -51,7 +52,7 @@ const Calendar = () => {
         </S.TextContainer>
         <S.Input
           placeholder="일정 내용을 입력하세요..."
-          value={content}
+          value={content || firstMemo?.content || ""}
           onChange={(e: any) => setContent(e.target.value)}
         />
       </S.Modal>

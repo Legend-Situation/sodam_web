@@ -64,7 +64,7 @@ const Chat = () => {
         <S.Chat>인정해요 그냥.</S.Chat>
       </S.OtherChatContainer>
 
-      {comments.map((comment, index) =>
+      {comments.map((comment: any, index: number) =>
         comment.author === "띠연" ? (
           <S.MyChatContainer key={index}>
             <span>나</span>
