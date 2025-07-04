@@ -1,17 +1,20 @@
 import * as S from "./style";
-import ShellIcon from "../../assets/shell.svg";
-import Alerm from "../../assets/alerm.svg";
-import Market from "../../assets/market.svg";
-import HomeIcon from "../../assets/home.svg";
-import CalendarIcon from "../../assets/calendar.svg";
-import MyPageIcon from "../../assets/mypage.svg";
+import ShellIcon from "@/assets/shell.svg";
+import Alerm from "@/assets/alerm.svg";
+import Market from "@/assets/market.svg";
+import HomeIcon from "@/assets/home.svg";
+import CalendarIcon from "@/assets/calendar.svg";
+import MyPageIcon from "@/assets/mypage.svg";
 import SeaOtter1 from "../../assets/seaOtter1.png";
-import Heart from "../../assets/heart.svg";
-import Note from "../../assets/note.svg";
+import Heart from "@/assets/heart.svg";
+import Note from "@/assets/note.svg";
 import { useNavigate } from "react-router-dom";
+import { useMyGroupQuery, useGroupQuestionsQuery } from "@/api";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { data } = useMyGroupQuery();
+  const { data: questions } = useGroupQuestionsQuery(data?.data.groupId || 0);
   const handleGoAnswer = () => {
     navigate("/choose-feel");
   };
@@ -24,12 +27,14 @@ const Home = () => {
   const GoMyPage = () => {
     navigate("/my-page");
   };
+  const members = data?.data.members || [];
+  const firstQuestion = questions?.data.questions[0];
   return (
     <S.Layout>
       <S.Header>
         <S.ShellContainer>
           <img src={ShellIcon} />
-          <S.Shell>999</S.Shell>
+          <S.Shell>{members.length}</S.Shell>
         </S.ShellContainer>
         <S.IconContainer>
           <S.Icon src={Alerm} />
@@ -38,23 +43,23 @@ const Home = () => {
       </S.Header>
       <S.MainContainer>
         <S.MeetTextCotainer>
-          <>만난지</>
-          <S.BlueText>7315</S.BlueText>
-          <>일째</>
+          <>시작일</>
+          <S.BlueText>{data?.data.startedAt}</S.BlueText>
         </S.MeetTextCotainer>
         <S.MyGroupNames>
-          <S.Name>띠연</S.Name>
-          <S.HeartIcon src={Heart} />
-          <S.Name>김사장</S.Name>
-          <S.HeartIcon src={Heart} />
-          <S.Name>엄마다</S.Name>
-          <S.HeartIcon src={Heart} />
-          <S.Name>ㅅㅇ</S.Name>
+          {members.map((m: any, idx: number) => (
+            <>
+              <S.Name key={m.userId}>{m.name}</S.Name>
+              {idx < members.length - 1 && <S.HeartIcon src={Heart} />}
+            </>
+          ))}
         </S.MyGroupNames>
         <S.CharacterImg src={SeaOtter1} />
         <S.QuestionContainer onClick={handleGoAnswer}>
-          <S.QuestionTitle>오늘의 질문 #1</S.QuestionTitle>
-          <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
+          <S.QuestionTitle>
+            오늘의 질문 #{firstQuestion?.id}
+          </S.QuestionTitle>
+          <S.Question>{firstQuestion?.content}</S.Question>
         </S.QuestionContainer>
       </S.MainContainer>
       <S.Footer>
