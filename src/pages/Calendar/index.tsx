@@ -7,21 +7,29 @@ import CalendarIcon from "@/assets/dartkcalendar.svg";
 import MyPageIcon from "@/assets/mypage.svg";
 import CalendarImg from "@/assets/calendarImg.svg";
 import GoToAnswer from "@/assets/goToAnswer.svg";
-import { useCreateMemoMutation, useMonthMemosQuery } from "@/api";
+import {
+  useCreateMemoMutation,
+  useMonthMemosQuery,
+  useMyGroupQuery,
+} from "@/api";
 
 const Calendar = () => {
   const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
   const [content, setContent] = useState("");
   const createMemo = useCreateMemoMutation();
-  const { data: memos } = useMonthMemosQuery(1, "2025-06");
+  const { data: group } = useMyGroupQuery();
+  const groupId = group?.data.groupId || 0;
+  const today = new Date().toISOString().slice(0, 10);
+  const month = today.slice(0, 7);
+  const { data: memos } = useMonthMemosQuery(groupId, month);
 
   const GoHome = () => navigate("/home");
   const GoList = () => navigate("/list");
   const GoMyPage = () => navigate("/my-page");
   const ToggleModal = () => setModalOpen(!isModalOpen);
   const GoShowAnswer = () => {
-    createMemo.mutate({ groupId: 1, date: "2025-02-24", content });
+    createMemo.mutate({ groupId, date: today, content });
     navigate("/show-answer");
   };
 

@@ -4,11 +4,13 @@ import Note from "@/assets/dartlist.svg";
 import HomeIcon from "@/assets/grayhome.svg";
 import CalendarIcon from "@/assets/calendar.svg";
 import MyPageIcon from "@/assets/mypage.svg";
-import { useGroupQuestionsQuery } from "@/api";
+import { useGroupQuestionsQuery, useMyGroupQuery } from "@/api";
 
 const List = () => {
   const navigate = useNavigate();
-  const { data } = useGroupQuestionsQuery(1);
+  const { data: group } = useMyGroupQuery();
+  const groupId = group?.data.groupId || 0;
+  const { data } = useGroupQuestionsQuery(groupId);
 
   const GoQuestion = () => {
     navigate("/show-answer");
