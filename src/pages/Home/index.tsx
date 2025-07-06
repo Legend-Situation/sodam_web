@@ -43,8 +43,19 @@ const Home = () => {
       </S.Header>
       <S.MainContainer>
         <S.MeetTextCotainer>
-          <>시작일</>
-          <S.BlueText>{data?.data.startedAt}</S.BlueText>
+          <>만난지</>
+          <S.BlueText>
+            {data?.data.startedAt
+              ? `${
+                  Math.floor(
+                    (new Date().getTime() -
+                      new Date(data.data.startedAt).getTime()) /
+                      (1000 * 60 * 60 * 24)
+                  ) + 1
+                }`
+              : ""}
+            <span style={{ color: "black" }}>일 째</span>
+          </S.BlueText>
         </S.MeetTextCotainer>
         <S.MyGroupNames>
           {members.map((m: any, idx: number) => (
@@ -56,9 +67,7 @@ const Home = () => {
         </S.MyGroupNames>
         <S.CharacterImg src={SeaOtter1} />
         <S.QuestionContainer onClick={handleGoAnswer}>
-          <S.QuestionTitle>
-            오늘의 질문 #{firstQuestion?.id}
-          </S.QuestionTitle>
+          <S.QuestionTitle>오늘의 질문 #{firstQuestion?.id}</S.QuestionTitle>
           <S.Question>{firstQuestion?.content}</S.Question>
         </S.QuestionContainer>
       </S.MainContainer>

@@ -57,19 +57,19 @@ const MyPage = () => {
       <S.SelectList>
         <S.Colum>
           <S.Text>초대 코드 입력하기</S.Text>
-          <S.RightIcon src={RightIcon} />
+          <S.Right src={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>알림</S.Text>
-          <S.RightIcon src={RightIcon} />
+          <S.Right src={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>공지사항</S.Text>
-          <S.RightIcon src={RightIcon} />
+          <S.Right src={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>자주 묻는 질문</S.Text>
-          <S.RightIcon src={RightIcon} />
+          <S.Right src={RightIcon} />
         </S.Colum>
         <S.Colum>
           <S.Text>버전</S.Text>
@@ -86,7 +86,11 @@ const MyPage = () => {
         <img src={GrayHome} onClick={GoHome} style={{ cursor: "pointer" }} />
         <img src={CalendarIcon} onClick={GoCal} style={{ cursor: "pointer" }} />
         <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
-        <img src={DarkProfile} onClick={GoMyPage} style={{ cursor: "pointer" }} />
+        <img
+          src={DarkProfile}
+          onClick={GoMyPage}
+          style={{ cursor: "pointer" }}
+        />
       </S.Footer>
     </S.Layout>
   );
