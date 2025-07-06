@@ -87,4 +87,5 @@ export const Answer = styled.textarea`
   border-radius: 8px;
   border: 1px solid #dfdfdf;
   padding: 12px 16px;
+  outline: none;
 `;

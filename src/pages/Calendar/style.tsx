@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Calendar from "react-calendar";
 import Background from "@/assets/background.png";
 import EditIcon from "@/assets/edit.svg";
 
@@ -21,6 +22,29 @@ export const EditImg = styled.img.attrs({
   src: EditIcon,
 })`
   margin: 80px 0 0 300px;
+`;
+
+export const StyledCalendar = styled(Calendar)`
+  margin: 52px;
+  border: none;
+  background: transparent;
+  font-family: 'Pretendard-Regular';
+
+  .has-memo {
+    position: relative;
+  }
+
+  .has-memo::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: #84C3EE;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 export const Footer = styled.div`
@@ -56,6 +80,7 @@ export const Input = styled.textarea`
   font-size: 16px;
   box-sizing: border-box;
   resize: none;
+  outline: none;
   ::placeholder {
     color: #c2c2c2;
     text-align: left;
