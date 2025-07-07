@@ -5,31 +5,23 @@ import Note from "@/assets/graynote.svg";
 import HomeIcon from "@/assets/grayhome.svg";
 import CalendarIcon from "@/assets/dartkcalendar.svg";
 import MyPageIcon from "@/assets/mypage.svg";
-import CalendarImg from "@/assets/calendarImg.svg";
 import GoToAnswer from "@/assets/goToAnswer.svg";
-import {
-  useCreateMemoMutation,
-  useMonthMemosQuery,
-  useMyGroupQuery,
-} from "@/api";
+import { useCreateMemoMutation, useMonthMemosQuery } from "@/api";
+import CalendarContainer from "@/components/CalendarContainer";
 
 const Calendar = () => {
   const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
   const [content, setContent] = useState("");
   const createMemo = useCreateMemoMutation();
-  const { data: group } = useMyGroupQuery();
-  const groupId = group?.data.groupId || 0;
-  const today = new Date().toISOString().slice(0, 10);
-  const month = today.slice(0, 7);
-  const { data: memos } = useMonthMemosQuery(groupId, month);
+  const { data: memos } = useMonthMemosQuery(1, "2025-06");
 
   const GoHome = () => navigate("/home");
   const GoList = () => navigate("/list");
   const GoMyPage = () => navigate("/my-page");
   const ToggleModal = () => setModalOpen(!isModalOpen);
   const GoShowAnswer = () => {
-    createMemo.mutate({ groupId, date: today, content });
+    createMemo.mutate({ groupId: 1, date: "2025-02-24", content });
     navigate("/show-answer");
   };
 
@@ -37,17 +29,19 @@ const Calendar = () => {
 
   return (
     <S.Layout>
-      <img
-        src={CalendarImg}
-        style={{ margin: "52px", cursor: "pointer" }}
-        onClick={ToggleModal}
-      />
+      <p>캘린더</p>
+      <CalendarContainer />
+
       <S.EditImg onClick={ToggleModal} style={{ cursor: "pointer" }} />
       <S.Footer>
         <img src={HomeIcon} onClick={GoHome} style={{ cursor: "pointer" }} />
         <img src={CalendarIcon} style={{ cursor: "pointer" }} />
         <img src={Note} onClick={GoList} style={{ cursor: "pointer" }} />
-        <img src={MyPageIcon} onClick={GoMyPage} style={{ cursor: "pointer" }} />
+        <img
+          src={MyPageIcon}
+          onClick={GoMyPage}
+          style={{ cursor: "pointer" }}
+        />
       </S.Footer>
       <S.Modal isOpen={isModalOpen}>
         <S.TextContainer>
