@@ -100,7 +100,7 @@ const CalendarContainer = ({
       </S.DaysGrid>
 
       <S.Footer>
-        만난지 <S.Count>{daysCount}</S.Count>일 째
+        만난지 <S.Count>{daysCount}</S.Count> 일 째
       </S.Footer>
     </S.Container>
   );

@@ -5,6 +5,7 @@ import CloseSvg from "@/assets/close.svg";
 import ChatSvg from "@/assets/chat.svg";
 import { useNavigate } from "react-router-dom";
 import { useAnswersQuery } from "@/api";
+import { formatDateKorean } from "@/utils/format";
 
 const ShowAnswer = () => {
   const navigate = useNavigate();
@@ -32,7 +33,9 @@ const ShowAnswer = () => {
       <S.MainContainer>
         <S.QuestionNumberContainer>
           <span>질문 #1</span>
-          <span>{data?.data?.answers?.[0]?.createdAt ?? ""}</span>
+          <span>
+            {formatDateKorean(data?.data?.answers?.[0]?.createdAt ?? "")}
+          </span>
         </S.QuestionNumberContainer>
         <S.Question>{data?.data?.question}</S.Question>
         <S.MemberFeelContainer>
@@ -48,7 +51,9 @@ const ShowAnswer = () => {
             <S.Detial>
               <span>{ans.name}</span>
               {ans.createdAt && (
-                <span style={{ color: "#8A8A8A" }}>{ans.createdAt}</span>
+                <span style={{ color: "#8A8A8A" }}>
+                  {formatDateKorean(ans.createdAt)}
+                </span>
               )}
             </S.Detial>
             <S.AnswerText1>{ans.answer}</S.AnswerText1>

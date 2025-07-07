@@ -9,7 +9,7 @@ export const Container = styled.main`
 export const Header = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 16px 0;
 `;
 
@@ -19,15 +19,11 @@ export const IconBtn = styled.button`
   cursor: pointer;
   width: 24px;
   height: 24px;
-  img {
-    width: 100%;
-    height: 100%;
-  }
 `;
 
 export const Title = styled.h2`
   flex: 1;
-  text-align: left;
+  text-align: start;
   font-size: 18px;
   font-weight: bold;
 `;
@@ -92,7 +88,7 @@ export const Dot = styled.span`
 export const Footer = styled.div`
   text-align: center;
   margin-top: 12px;
-  font-size: 14px;
+  font-size: 22px;
   color: #555;
 `;
 export const Count = styled.span`
