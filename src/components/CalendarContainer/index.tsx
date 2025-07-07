@@ -71,12 +71,12 @@ const CalendarContainer = ({
   return (
     <S.Container>
       <S.Header>
-        <S.IconBtn onClick={() => moveMonth(-1)}>
-          <img src={PrevIcon} alt="prev" />
-        </S.IconBtn>
         <S.Title>
           {view.year}년 {String(view.month + 1).padStart(2, "0")}월
         </S.Title>
+        <S.IconBtn onClick={() => moveMonth(-1)}>
+          <img src={PrevIcon} alt="prev" />
+        </S.IconBtn>
         <S.IconBtn onClick={() => moveMonth(1)}>
           <img src={NextIcon} alt="next" />
         </S.IconBtn>
@@ -100,7 +100,7 @@ const CalendarContainer = ({
       </S.DaysGrid>
 
       <S.Footer>
-        만난지 <S.Count>{daysCount}</S.Count>일 째
+        만난지 <S.Count>{daysCount}</S.Count> 일 째
       </S.Footer>
     </S.Container>
   );
