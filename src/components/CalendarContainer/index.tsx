@@ -71,12 +71,12 @@ const CalendarContainer = ({
   return (
     <S.Container>
       <S.Header>
-        <S.Title>
-          {view.year}년 {String(view.month + 1).padStart(2, "0")}월
-        </S.Title>
         <S.IconBtn onClick={() => moveMonth(-1)}>
           <img src={PrevIcon} alt="prev" />
         </S.IconBtn>
+        <S.Title>
+          {view.year}년 {String(view.month + 1).padStart(2, "0")}월
+        </S.Title>
         <S.IconBtn onClick={() => moveMonth(1)}>
           <img src={NextIcon} alt="next" />
         </S.IconBtn>

@@ -9,7 +9,7 @@ export const Container = styled.main`
 export const Header = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 16px 0;
 `;
 
@@ -27,7 +27,7 @@ export const IconBtn = styled.button`
 
 export const Title = styled.h2`
   flex: 1;
-  text-align: left;
+  text-align: center;
   font-size: 18px;
   font-weight: bold;
 `;
