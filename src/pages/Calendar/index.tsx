@@ -31,14 +31,18 @@ const Calendar = () => {
   const GoHome = () => navigate("/home");
   const GoList = () => navigate("/list");
   const GoMyPage = () => navigate("/my-page");
-  const ToggleModal = () => setModalOpen(!isModalOpen);
+  const todayMemo = memos?.data.memos.find((m: any) => m.date === todayDate);
+  const ToggleModal = () => {
+    if (!isModalOpen) {
+      setContent(todayMemo?.content || "");
+    }
+    setModalOpen(!isModalOpen);
+  };
   const GoShowAnswer = () => {
     if (!groupId) return;
     createMemo.mutate({ groupId, date: todayDate, content });
     navigate("/show-answer");
   };
-
-  const firstMemo = memos?.data.memos[0];
 
   return (
     <S.Layout>
@@ -70,7 +74,7 @@ const Calendar = () => {
         </S.TextContainer>
         <S.Input
           placeholder="일정 내용을 입력하세요..."
-          value={content || firstMemo?.content || ""}
+          value={content}
           onChange={(e: any) => setContent(e.target.value)}
         />
       </S.Modal>
