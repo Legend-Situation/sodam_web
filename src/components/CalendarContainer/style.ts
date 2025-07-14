@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-  width: 360px;
+  width: 340px;
   margin: 0 auto;
   font-family: "SeoulHangangM";
 `;
