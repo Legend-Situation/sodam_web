@@ -52,8 +52,8 @@ export const LoginContainer = styled.div`
 export const CLogo = styled.img.attrs({
   src: CLogoIcon,
 })`
-  position: fixed;
-  left: 55px;
+  position: absolute;
+  left: 12px;
 `;
 
 export const GoLogin = styled.div`

@@ -4,12 +4,14 @@ import WriteSvg from "@/assets/write.svg";
 import CloseSvg from "@/assets/close.svg";
 import ChatSvg from "@/assets/chat.svg";
 import { useNavigate } from "react-router-dom";
-import { useAnswersQuery } from "@/api";
+import { useAnswersQuery, useMyGroupQuery } from "@/api";
 import { formatDateKorean } from "@/utils/format";
 
 const ShowAnswer = () => {
+  const { data } = useMyGroupQuery();
+  const group = data?.data || [];
+  const { data: answers } = useAnswersQuery(group?.groupId);
   const navigate = useNavigate();
-  const { data } = useAnswersQuery(1);
 
   const handleGo = () => {
     navigate("/choose-feel");
@@ -27,26 +29,24 @@ const ShowAnswer = () => {
     <S.Layout>
       <S.Header>
         <S.WriteIcon src={WriteSvg} onClick={handleGo} />
-        <S.Title>김가족 일기</S.Title>
+        <S.Title>{group.name}</S.Title>
         <S.CloseIcon src={CloseSvg} onClick={GoClose} />
       </S.Header>
       <S.MainContainer>
         <S.QuestionNumberContainer>
-          <span>질문 #1</span>
-          <span>
-            {formatDateKorean(data?.data?.answers?.[0]?.createdAt ?? "")}
-          </span>
+          <span>질문 #{answers?.data.questionId}</span>
+          <span>{formatDateKorean(answers?.[0]?.createdAt ?? "")}</span>
         </S.QuestionNumberContainer>
-        <S.Question>{data?.data?.question}</S.Question>
+        <S.Question>{answers?.data.question}</S.Question>
         <S.MemberFeelContainer>
-          {data?.data?.answers?.map((ans: any, idx: number) => (
+          {answers?.data.answers.map((ans: any, idx: number) => (
             <S.FeelContainer key={idx}>
               <img src={Happy} />
               <S.Name>{ans.name}</S.Name>
             </S.FeelContainer>
           ))}
         </S.MemberFeelContainer>
-        {data?.data?.answers?.map((ans: any, idx: number) => (
+        {answers?.data.answers.map((ans: any, idx: number) => (
           <S.Answer2 key={idx}>
             <S.Detial>
               <span>{ans.name}</span>

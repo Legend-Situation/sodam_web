@@ -51,6 +51,7 @@ export const QuestionNumberContainer = styled.div`
   gap: 12px;
   font-size: 12px;
   padding-bottom: 10px;
+  align-items: center;
 `;
 
 export const Question = styled.div`

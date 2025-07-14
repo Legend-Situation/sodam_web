@@ -7,10 +7,17 @@ import Angry from "@/assets/angry.png";
 import Arrow from "@/assets/arrow.svg";
 import Check from "@/assets/check.svg";
 import { useNavigate } from "react-router-dom";
-import { useAnswerQuestionMutation } from "@/api";
+import {
+  useAnswerQuestionMutation,
+  useMyGroupQuery,
+  useTodayQuestionQuery,
+} from "@/api";
 
 const ChooseFeel = () => {
   const navigate = useNavigate();
+  const { data } = useMyGroupQuery();
+
+  const { data: questions } = useTodayQuestionQuery(data?.data.groupId);
   const [selectedFeelId, setSelectedFeelId] = useState(null as number | null);
   const [answer, setAnswer] = useState("");
   const answerQuestion = useAnswerQuestionMutation();
@@ -21,7 +28,7 @@ const ChooseFeel = () => {
 
   const GoAnswer = () => {
     answerQuestion.mutate(
-      { groupId: 1, answer, weather: "맑음" },
+      { groupId: data?.data.groupId, answer, weather: "맑음" },
       { onSuccess: () => navigate("/show-answer") }
     );
   };
@@ -56,8 +63,10 @@ const ChooseFeel = () => {
           </S.Feel>
         </S.ChooseFeelContainer>
         <S.QuestionContainer>
-          <S.QuestionNumber>질문 #1</S.QuestionNumber>
-          <S.Question>서로를 볼 때 생각나는 동물은 무엇인가요?</S.Question>
+          <S.QuestionNumber>
+            질문 #{questions?.data?.question.id}
+          </S.QuestionNumber>
+          <S.Question>{questions?.data?.question.content}</S.Question>
           <S.Answer
             placeholder="답변을 입력하세요."
             value={answer}
