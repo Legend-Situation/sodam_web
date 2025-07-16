@@ -13,6 +13,9 @@ import ShowAnswer from "@/pages/ShowAnswer";
 import MyPage from "@/pages/MyPage";
 import KakaoRedirectHandler from "@/pages/KakaoRedirectHandler";
 import Calendar from "@/pages/Calendar";
+import Shop from "@/pages/Shop";
+import TimeCapsule from "@/pages/TimeCapsule";
+import GrowthTree from "@/pages/GrowthTree";
 
 const App = () => {
   return (
@@ -35,6 +38,9 @@ const App = () => {
         <Route path="/show-answer" element={<ShowAnswer />} />
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/calendar" element={<Calendar />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/timecapsule" element={<TimeCapsule />} />
+        <Route path="/growthtree" element={<GrowthTree />} />
       </Routes>
     </BrowserRouter>
   );

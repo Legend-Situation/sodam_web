@@ -4,3 +4,7 @@ export * from './group';
 export * from './question';
 export * from './memo';
 export * from './token';
+export * from './point';
+export * from './shop';
+export * from './timecapsule';
+export * from './growthtree';

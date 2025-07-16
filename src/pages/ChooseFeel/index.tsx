@@ -11,6 +11,7 @@ import {
   useAnswerQuestionMutation,
   useMyGroupQuery,
   useTodayQuestionQuery,
+  useEarnPointMutation,
 } from "@/api";
 
 const ChooseFeel = () => {
@@ -21,16 +22,29 @@ const ChooseFeel = () => {
   const [selectedFeelId, setSelectedFeelId] = useState(null as number | null);
   const [answer, setAnswer] = useState("");
   const answerQuestion = useAnswerQuestionMutation();
+  const earnPoint = useEarnPointMutation();
 
   const GoBack = () => {
     navigate("/home");
   };
 
   const GoAnswer = () => {
-    answerQuestion.mutate(
-      { groupId: data?.data.groupId, answer, weather: "맑음" },
-      { onSuccess: () => navigate("/show-answer") }
-    );
+    if (answer.trim()) {
+      answerQuestion.mutate(
+        { groupId: data?.data.groupId, answer, weather: "맑음" },
+        { 
+          onSuccess: () => {
+            // 답변 완료시 포인트 지급
+            earnPoint.mutate({
+              type: "answer",
+              amount: 10,
+              description: "질문 답변 완료"
+            });
+            navigate("/show-answer");
+          }
+        }
+      );
+    }
   };
 
   const Feel = [

@@ -15,6 +15,21 @@ const QUERY_KEY = {
   user: {
     PROFILE: 'user',
   },
+  point: {
+    BALANCE: 'pointBalance',
+    HISTORY: 'pointHistory',
+  },
+  shop: {
+    ITEMS: 'shopItems',
+    INVENTORY: 'inventory',
+  },
+  timecapsule: {
+    LIST: 'timecapsuleList',
+  },
+  growthtree: {
+    STATUS: 'growthtreeStatus',
+    MILESTONES: 'growthtreeMilestones',
+  },
 };
 
 export default QUERY_KEY;

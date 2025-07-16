@@ -30,6 +30,14 @@ export const IconContainer = styled.div`
 export const Icon = styled.img`
     width: 24px;
 `;
+export const PointDisplay = styled.div`
+    background: #84c3ee;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+`;
 export const MainContainer = styled.div`
     padding: 70px 28px 120px 28px;
     display: flex;
@@ -74,6 +82,12 @@ export const QuestionContainer = styled.div`
     font-size: 14px;
     border-radius: 8px;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(132, 195, 238, 0.3);
+    }
 `;
 export const QuestionTitle = styled.span`
     font-size: 14px;
@@ -83,4 +97,32 @@ export const Question = styled.div`
     padding-top: 5px;
     font-size: 14px;
     color: #5c5c5c;
+`;
+
+export const NewFeatureButton = styled.button`
+    background: linear-gradient(135deg, #84c3ee, #a8d5f0);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px;
+    box-shadow: 0 2px 8px rgba(132, 195, 238, 0.3);
+    transition: all 0.2s ease;
+    
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(132, 195, 238, 0.4);
+    }
+`;
+
+export const FeatureGrid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
 `;
