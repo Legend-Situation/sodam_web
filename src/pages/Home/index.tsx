@@ -12,15 +12,15 @@ const Home = () => {
   const { data: questions } = useTodayQuestionQuery(data?.data.groupId);
   const { data: points } = usePointsQuery();
   const navigate = useNavigate();
-  
+
   const handleGoAnswer = () => {
     navigate("/choose-feel");
   };
-  
+
   const goToShop = () => navigate("/shop");
   const goToTimeCapsule = () => navigate("/timecapsule");
   const goToGrowthTree = () => navigate("/growthtree");
-  
+
   const members = data?.data.members || [];
 
   return (

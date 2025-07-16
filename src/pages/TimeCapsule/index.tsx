@@ -9,6 +9,7 @@ import {
 } from "@/api";
 import Footer from "@/components/Footer";
 import Arrow from "@/assets/arrow.svg";
+import Arrow from "@/components/Icons/Arrow";
 
 const TimeCapsule = () => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const TimeCapsule = () => {
   return (
     <S.Layout>
       <S.Header>
-        <img src={Arrow} onClick={GoBack} style={{ cursor: "pointer" }} />
+        <Arrow onClick={GoBack} style={{ cursor: "pointer" }} />
         <S.Title>추억 타임캡슐</S.Title>
         <S.CreateButton onClick={() => setIsCreating(true)}>+</S.CreateButton>
       </S.Header>
