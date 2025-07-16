@@ -68,9 +68,9 @@ export const MyGroupNames = styled.div`
     align-items: center;
 `;
 export const CharacterImg = styled.img`
-    padding-top: 10px;
     width: 110px;
-    padding-bottom: 50px;
+    height: 110px;
+    object-fit: contain;
 `;
 export const QuestionContainer = styled.div`
     display: flex;
@@ -99,30 +99,77 @@ export const Question = styled.div`
     color: #5c5c5c;
 `;
 
-export const NewFeatureButton = styled.button`
-    background: linear-gradient(135deg, #84c3ee, #a8d5f0);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 8px;
-    box-shadow: 0 2px 8px rgba(132, 195, 238, 0.3);
-    transition: all 0.2s ease;
-    
-    &:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(132, 195, 238, 0.4);
-    }
+export const OtterContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(132, 195, 238, 0.2);
 `;
 
-export const FeatureGrid = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 20px;
+export const OtterInfo = styled.div`
+    text-align: center;
+    margin: 8px 0;
+`;
+
+export const OtterLevel = styled.div`
+    font-size: 18px;
+    font-weight: bold;
+    color: #84c3ee;
+    margin-bottom: 4px;
+`;
+
+export const OtterName = styled.div`
+    font-size: 14px;
+    color: #666;
+`;
+
+export const ProgressContainer = styled.div`
+    width: 200px;
+    margin: 12px 0;
+`;
+
+export const ProgressBar = styled.div`
     width: 100%;
-    max-width: 300px;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 4px;
+`;
+
+export const ProgressFill = styled.div<{ width: number }>`
+    width: ${({ width }) => width}%;
+    height: 100%;
+    background: linear-gradient(90deg, #84c3ee, #a8d5f0);
+    transition: width 0.3s ease;
+`;
+
+export const ProgressText = styled.div`
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+`;
+
+export const WaterButton = styled.button`
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 8px;
+    
+    &:hover {
+        background: #45a049;
+    }
+    
+    &:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
 `;

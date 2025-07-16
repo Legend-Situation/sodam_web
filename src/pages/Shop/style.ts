@@ -23,12 +23,14 @@ export const Title = styled.span`
   font-weight: bold;
 `;
 
-export const PointDisplay = styled.div`
-  background: #84c3ee;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 14px;
+export const ShellContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+export const Shell = styled.span`
+  font-size: 16px;
   font-weight: bold;
 `;
 
@@ -60,6 +62,12 @@ export const ItemGrid = styled.div`
   gap: 16px;
 `;
 
+export const PremiumGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
 export const ItemCard = styled.div`
   background: white;
   border-radius: 12px;
@@ -70,10 +78,16 @@ export const ItemCard = styled.div`
   align-items: center;
 `;
 
-export const ItemImage = styled.img`
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
+export const PremiumCard = styled.div`
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #84c3ee;
+`;
+
+export const ItemEmoji = styled.div`
+  font-size: 48px;
   margin-bottom: 8px;
 `;
 
@@ -83,6 +97,13 @@ export const ItemName = styled.h3`
   text-align: center;
 `;
 
+export const PremiumName = styled.h3`
+  font-size: 18px;
+  margin: 0 0 8px 0;
+  text-align: center;
+  color: #84c3ee;
+`;
+
 export const ItemDescription = styled.p`
   font-size: 12px;
   color: #666;
@@ -90,17 +111,59 @@ export const ItemDescription = styled.p`
   text-align: center;
 `;
 
+export const PremiumDescription = styled.p`
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 12px 0;
+  text-align: center;
+`;
+
 export const ItemPrice = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
   font-size: 14px;
   font-weight: bold;
   color: #84c3ee;
   margin-bottom: 8px;
 `;
 
-export const ItemQuantity = styled.div`
-  font-size: 12px;
-  color: #666;
+export const PremiumPrice = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #84c3ee;
   margin-bottom: 8px;
+`;
+
+export const PremiumPeriod = styled.div`
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 12px;
+`;
+
+export const LimitedBadge = styled.div`
+  background: #ff6b6b;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  margin-bottom: 8px;
+`;
+
+export const DiscountBadge = styled.div`
+  background: #4caf50;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-bottom: 12px;
+  text-align: center;
 `;
 
 export const PurchaseButton = styled.button`
@@ -119,13 +182,19 @@ export const PurchaseButton = styled.button`
   }
 `;
 
-export const UseButton = styled.button`
-  background: #4caf50;
+export const PremiumButton = styled.button`
+  background: linear-gradient(135deg, #84c3ee, #a8d5f0);
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 12px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
   width: 100%;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(132, 195, 238, 0.4);
+  }
 `;

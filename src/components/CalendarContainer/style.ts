@@ -60,6 +60,7 @@ export const DayCell = styled.div<{
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   color: ${({ weekend, saturday }: { weekend: boolean; saturday: boolean }) =>
     weekend ? "red" : saturday ? "blue" : "#333"};
   ${({ today }: { today: boolean }) =>
@@ -70,6 +71,13 @@ export const DayCell = styled.div<{
     border-radius: 50%;
     width: 32px; height: 32px;
   `}
+  
+  &:hover {
+    background: rgba(132, 195, 238, 0.2);
+    border-radius: 50%;
+    width: 32px; 
+    height: 32px;
+  }
 `;
 
 export const DayNumber = styled.span`

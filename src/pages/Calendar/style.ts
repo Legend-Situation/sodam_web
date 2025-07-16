@@ -58,3 +58,19 @@ export const TextContainer = styled.div`
     display: flex;
     gap: 10px;
 `;
+
+export const SaveButton = styled.button`
+    width: 100%;
+    background: #84c3ee;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+    
+    &:hover {
+        background: #6bb3e0;
+    }
+`;

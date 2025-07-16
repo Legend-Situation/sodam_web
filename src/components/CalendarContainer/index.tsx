@@ -9,6 +9,7 @@ interface Event {
 interface CalendarContainerProps {
   events?: Event[];
   startDate?: string;
+  onDateClick?: (date: string) => void;
 }
 
 const weekDays = ["일", "월", "화", "수", "목", "금", "토"];
@@ -16,6 +17,7 @@ const weekDays = ["일", "월", "화", "수", "목", "금", "토"];
 const CalendarContainer = ({
   events = [],
   startDate,
+  onDateClick,
 }: CalendarContainerProps) => {
   const today = new Date();
   const [view, setView] = useState({
@@ -92,7 +94,16 @@ const CalendarContainer = ({
 
       <S.DaysGrid>
         {grid.map((d, i) => (
-          <S.DayCell key={i} today={d !== null && isToday(d)}>
+          <S.DayCell 
+            key={i} 
+            today={d !== null && isToday(d)}
+            onClick={() => {
+              if (d && onDateClick) {
+                const dateStr = `${view.year}-${String(view.month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+                onDateClick(dateStr);
+              }
+            }}
+          >
             {d && <S.DayNumber>{d}</S.DayNumber>}
             {d && hasEvent(d) && <S.Dot />}
           </S.DayCell>
