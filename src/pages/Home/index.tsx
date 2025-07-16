@@ -78,7 +78,7 @@ const Home = () => {
           <S.NewFeatureButton onClick={goToGrowthTree}>
             🌱 성장나무
           </S.NewFeatureButton>
-          <S.NewFeatureButton onClick={() => navigate("/missions")}>
+          <S.NewFeatureButton onClick={() => alert("준비중입니다!")}>
             🎯 미션
           </S.NewFeatureButton>
         </S.FeatureGrid>

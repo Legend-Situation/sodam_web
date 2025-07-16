@@ -10,7 +10,6 @@ import {
 } from "@/api";
 import Footer from "@/components/Footer";
 import Arrow from "@/assets/arrow.svg";
-import Arrow from "@/components/Icons/Arrow";
 
 const GrowthTree = () => {
   const navigate = useNavigate();
@@ -53,7 +52,7 @@ const GrowthTree = () => {
   return (
     <S.Layout>
       <S.Header>
-        <Arrow onClick={GoBack} style={{ cursor: "pointer" }} />
+        <img src={Arrow} onClick={GoBack} style={{ cursor: "pointer" }} />
         <S.Title>관계 성장 나무</S.Title>
         <S.PointDisplay>💎 {points?.data.balance || 0}</S.PointDisplay>
       </S.Header>

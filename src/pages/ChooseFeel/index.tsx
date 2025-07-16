@@ -12,7 +12,6 @@ import {
   useMyGroupQuery,
   useTodayQuestionQuery,
   useEarnPointMutation,
-  useEarnPointMutation,
 } from "@/api";
 
 const ChooseFeel = () => {
@@ -23,7 +22,6 @@ const ChooseFeel = () => {
   const [selectedFeelId, setSelectedFeelId] = useState(null as number | null);
   const [answer, setAnswer] = useState("");
   const answerQuestion = useAnswerQuestionMutation();
-  const earnPoint = useEarnPointMutation();
   const earnPoint = useEarnPointMutation();
 
   const GoBack = () => {
